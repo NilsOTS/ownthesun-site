@@ -1,0 +1,14 @@
+# Hugo / Netlify optimiert
+/public/
+/resources/
+/hugo_stats.json
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+.DS_Store
+Thumbs.db
+.hugo_build.lock
+node_modules/
+npm-debug.log*
+yarn-error.log*

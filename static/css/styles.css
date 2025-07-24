@@ -1,0 +1,133 @@
+/* ==========================================
+   OWN THE SUN – Global Reset & Typography
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400&family=Space+Grotesk:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #02476D; /* Deep Solar Blue */
+}
+
+body {
+  background-color: #FFFFFF; /* Reinweiß */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* ==========================================
+   Layout‐Container
+   ========================================== */
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ==========================================
+   Headings & Logo
+   ========================================== */
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #FCC90D; /* Solar Gold */
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5rem; }
+p.intro {
+  font-size: 1rem;
+  color: #02476D;
+  margin-bottom: 2rem;
+}
+
+/* Logo */
+.logo {
+  max-width: 37%;
+  margin: 0 auto 2rem auto;
+  display: block;
+}
+
+/* ==========================================
+   Main Headline & Sub‐headline
+   ========================================== */
+
+header .headline {
+  margin-bottom: 0.5rem;
+}
+
+header .subheadline {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: #02476D;
+  margin-bottom: 3rem;
+}
+
+/* ==========================================
+   Content / Call‐to‐Action
+   ========================================== */
+
+main h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+main p {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #FCC90D;
+  color: #02476D;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem; /* 24px */
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+  background-color: #02476D;
+  color: #FCC90D;
+}
+
+/* ==========================================
+   Footer
+   ========================================== */
+
+footer {
+  margin-top: 4rem;
+  font-size: 0.875rem;
+  color: #02476D;
+}
+
+/* ==========================================
+   Responsiveness
+   ========================================== */
+
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  body { padding: 1rem; }
+}

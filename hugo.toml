@@ -1,3 +1,13 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://www.ownthesun.de/"
+languageCode = "de-de"
+title = "Own The Sun"
+enableRobotsTXT = true
+
+[params]
+  tagline = "Erlebe die Kraft der Sonne in deinem Zuhause. Nachhaltige Energie für eine strahlende Zukunft."
+  Headline = "30 Jahre freie Energie aus der Sonne für Dich"
+  Subheadline = "Wir bieten hochklassige Produkte und lange Garantien"
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

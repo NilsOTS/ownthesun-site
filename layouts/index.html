@@ -1,0 +1,28 @@
+{{/* layouts/index.html */}}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ .Site.Title }}</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="{{ "css/styles.css" | relURL }}" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="{{ "images/logo.png" | relURL }}"
+           alt="{{ .Site.Title }} Logo"
+           class="logo" />
+      <h1 class="headline">30 Jahre freie Energie<br> aus der Sonne für Dich</h1>
+      <p class="subheadline">Wir bieten Premuim-Produkte mit extra langer Garantie.</p>
+    </header>
+    <main>
+      <p>Erlebe die Kraft der Sonne in Deinem Zuhause.<br> Nachhaltige Energie für eine strahlende Zukunft.</p>
+      <a href="#kontakt" class="cta-button">Jetzt anfragen</a>
+    </main>
+    <footer>
+      © {{ now.Format "2006" }} Own The Sun
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,7 +1,10 @@
 [build]
-  command   = "hugo"
-  publish   = "public"
+  # Hugo generiert alles in /public
+  publish = "public"
+  command = "hugo --gc --minify"
 
-[context.production.environment]
-  HUGO_VERSION = "0.148.1"
-
+# Alle „Friendly URLs“ (z. B. /kontakt, /produkte/solar-1) auf die statische index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
