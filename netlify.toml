@@ -3,6 +3,9 @@
   publish = "public"
   command = "hugo --gc --minify"
 
+[context.production.environment]
+  HUGO_VERSION = "0.124.1"
+
 # Alle „Friendly URLs“ (z. B. /kontakt, /produkte/solar-1) auf die statische index.html
 [[redirects]]
   from = "/*"
