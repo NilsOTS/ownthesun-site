@@ -24,5 +24,40 @@
       © {{ now.Format "2006" }} Own The Sun
     </footer>
   </div>
+<form name="Kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="Kontakt" />
+  <p style="display:none">
+    <label>Don’t fill this out: <input name="bot-field" /></label>
+  </p>
+  <p>
+    <label>Name:<br>
+      <input type="text" name="Name" required>
+    </label>
+  </p>
+  <p>
+    <label>E-Mail:<br>
+      <input type="email" name="E-Mail" required>
+    </label>
+  </p>
+  <p>
+    <label>Telefonnummer:<br>
+      <input type="tel" name="Telefonnummer" pattern="^(\+49|0)[1-9]\d{7,14}$" required>
+    </label>
+  </p>
+  <p>
+    <label>Nachricht:<br>
+      <textarea name="Nachricht" required></textarea>
+    </label>
+  </p>
+  <p>
+    <label>
+      <input type="checkbox" name="DSGVO" required>
+      Ich habe die <a href="/datenschutz" target="_blank">Datenschutzerklärung</a> gelesen und akzeptiere sie.
+    </label>
+  </p>
+  <p>
+    <button type="submit">Jetzt anfragen</button>
+  </p>
+</form>
 </body>
 </html>
