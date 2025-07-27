@@ -17,47 +17,33 @@ html {
   font-size: 18px;
   line-height: 1.5;
   color: #02476D; /* Deep Solar Blue */
-}
-
-body {
-  background-color: #FFFFFF; /* Reinweiß */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 2rem;
+  background: #FFFFFF;
 }
 
 /* ==========================================
-   Layout‐Container
+   Container & Layout
    ========================================== */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: #fff;
+}
 
 .container {
   max-width: 800px;
   width: 100%;
+  margin: 0 auto;
   text-align: center;
 }
 
 /* ==========================================
-   Headings & Logo
+   Logo
    ========================================== */
 
-h1, h2, h3, h4 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: #FCC90D; /* Solar Gold */
-  margin-bottom: 0.5em;
-}
-
-h1 { font-size: 2.5rem; }
-p.intro {
-  font-size: 1rem;
-  color: #02476D;
-  margin-bottom: 2rem;
-}
-
-/* Logo */
 .logo {
   max-width: 37%;
   margin: 0 auto 2rem auto;
@@ -65,9 +51,20 @@ p.intro {
 }
 
 /* ==========================================
-   Main Headline & Sub‐headline
+   Headings & Typography
    ========================================== */
 
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #FCC90D; /* Solar Gold */
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
 header .headline {
   margin-bottom: 0.5rem;
 }
@@ -75,85 +72,86 @@ header .headline {
 header .subheadline {
   font-family: 'Inter', sans-serif;
   font-size: 1.125rem;
-  line-height: 1.5;
   color: #02476D;
   margin-bottom: 3rem;
 }
 
 /* ==========================================
-   Content / Call‐to‐Action
+   Content / Call-to-Action
    ========================================== */
-
-main h2 {
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-}
 
 main p {
   margin-bottom: 2rem;
-  font-size: 1rem;
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: #FCC90D;
+  font-size: 1.05rem;
   color: #02476D;
-  text-decoration: none;
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  padding: 0.75rem 1.5rem; /* 24px */
-  border-radius: 8px;
-  transition: background-color 0.3s, color 0.3s;
 }
 
-.cta-button:hover,
-.cta-button:focus {
-  background-color: #02476D;
+/* CTA Button Style nach Brand Guide */
+button, .cta-button {
+  background: #FCC90D;
+  color: #02476D;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+  box-shadow: 0 4px 18px #00336630;
+}
+
+button:hover, .cta-button:hover,
+button:focus, .cta-button:focus {
+  background: #02476D;
   color: #FCC90D;
 }
 
-/* ==========================================
-   Footer
-   ========================================== */
+label {
+  text-align: left;
+  font-size: 1rem;
+  color: #02476D;
+  margin-bottom: 0.3em;
+  display: block;
+}
 
-footer {
-  margin-top: 4rem;
-  font-size: 0.875rem;
+/* Inputs & Textareas */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 0.7em;
+  border-radius: 7px;
+  border: 1px solid #CCC;
+  margin-top: 0.3em;
+  margin-bottom: 1em;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
   color: #02476D;
 }
 
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
 /* ==========================================
-   Responsiveness
+   Modals (Kontakt, Datenschutz, Impressum)
    ========================================== */
 
-@media (max-width: 600px) {
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.5rem; }
-  body { padding: 1rem; }
-}
-<style>
-.popup-overlay {
-  position: fixed; left: 0; top: 0; width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.75); z-index: 10000; display: flex;
-  align-items: center; justify-content: center;
-}
-.popup-content {
-  background: #fff; max-width: 600px; width: 90vw; padding: 2rem; border-radius: 10px; position: relative;
-  max-height: 80vh; overflow-y: auto;
-}
-.popup-close {
-  position: absolute; right: 1rem; top: 1rem; border: none; background: none; font-size: 2rem; cursor: pointer;
-}
-/* Modal-Overlay */
+/* Modal Overlay */
 .modal {
   display: none;
   position: fixed;
   z-index: 9999;
   left: 0; top: 0; width: 100vw; height: 100vh;
-  background: rgba(40,54,67,0.6);
+  background: rgba(40,54,67,0.55);
+  align-items: center;
+  justify-content: center;
 }
 
-/* Modal-Box */
+/* Modal Content */
 .modal-content {
   background: #fff;
   margin: 8vh auto 0 auto;
@@ -164,9 +162,12 @@ footer {
   padding: 2.5em 2em 1.7em 2em;
   position: relative;
   animation: fadeIn .2s;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
-/* Scrollbarer Bereich für viel Text */
+/* Scrollbarer Bereich für lange Texte */
 .modal-scroll {
   max-height: 50vh;
   overflow-y: auto;
@@ -174,18 +175,51 @@ footer {
   padding-right: 0.5em;
 }
 
-/* Schließen-Button */
+/* Modal Close Button */
 .modal-content .close {
-  position: absolute; right: 1.1em; top: 0.8em;
+  position: absolute;
+  right: 1.1em; top: 0.8em;
   font-size: 2em;
-  color: #283643; cursor: pointer;
+  color: #283643;
+  cursor: pointer;
   font-weight: bold;
+  background: none;
+  border: none;
 }
 
-/* Fade-In Animation */
 @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
 
-@media (max-width: 600px) {
-  .popup-content { max-width: 95vw; padding: 1rem; }
+/* ==========================================
+   Footer
+   ========================================== */
+
+footer {
+  margin-top: 4rem;
+  font-size: 0.95rem;
+  color: #02476D;
+  text-align: center;
 }
-</style>
+
+footer a {
+  color: #02476D;
+  text-decoration: underline;
+  margin: 0 0.4em;
+  transition: color 0.2s;
+}
+footer a:hover, footer a:focus {
+  color: #FCC90D;
+}
+
+/* ==========================================
+   Responsive Anpassung
+   ========================================== */
+
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.3rem; }
+  body { padding: 1rem; }
+  .container { padding: 0 0.3em; }
+  .modal-content { max-width: 99vw; padding: 1em; }
+  .logo { max-width: 65%; }
+}
+

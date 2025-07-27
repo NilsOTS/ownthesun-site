@@ -14,94 +14,96 @@
            alt="{{ .Site.Title }} Logo"
            class="logo" />
       <h1 class="headline">30 Jahre freie Energie<br> aus der Sonne für Dich</h1>
-      <p class="subheadline">Wir bieten Premuim-Produkte mit extra langer Garantie.</p>
+      <p class="subheadline">Wir bieten Premium-Produkte mit extra langer Garantie.</p>
     </header>
     <main>
       <p>Erlebe die Kraft der Sonne in Deinem Zuhause.<br> Nachhaltige Energie für eine strahlende Zukunft.</p>
       <!-- Button zum Öffnen des Kontaktformulars -->
-<div style="text-align:center;">
-  <button id="openModalBtn" style="background:#FFD100;color:#003366;border:none;border-radius:8px;padding:16px 36px;font-size:1.3em;cursor:pointer;font-family:inherit;font-weight:bold;box-shadow:0 4px 18px #00336630;">Jetzt anfragen</button>
-</div>
-<!-- Das Kontaktformular als Modal -->
-<div id="modalOverlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:#0009;z-index:9999;align-items:center;justify-content:center;">
-  <form name="Kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field"
-    style="background:#fff;border-radius:18px;padding:36px 24px;max-width:400px;width:92vw;box-shadow:0 4px 48px #00336640;display:flex;flex-direction:column;gap:14px;">
-    <input type="hidden" name="form-name" value="Kontakt" />
-    <input type="hidden" name="bot-field"/>
-    <h2 style="text-align:center;font-family:inherit;font-weight:bold;font-size:1.5em;color:#003366;margin-bottom:10px;">Kontakt aufnehmen</h2>
-    <label>Name:<br>
-      <input type="text" name="Name" required style="width:100%;padding:8px;margin-top:4px;">
-    </label>
-    <label>E-Mail:<br>
-      <input type="email" name="E-Mail" required style="width:100%;padding:8px;margin-top:4px;">
-    </label>
-    <label>Telefonnummer:<br>
-      <input type="tel" name="Telefonnummer" pattern="^(\+49|0)[1-9]\d{7,14}$" required style="width:100%;padding:8px;margin-top:4px;">
-    </label>
-    <label>Nachricht:<br>
-      <textarea name="Nachricht" required style="width:100%;padding:8px;margin-top:4px;"></textarea>
-    </label>
-    <label style="font-size:0.95em;">
-      <input type="checkbox" name="DSGVO" required>
-      Ich habe die <a href="/datenschutz" target="_blank">Datenschutzerklärung</a> gelesen und akzeptiere sie.
-    </label>
-    <div style="display:flex;gap:12px;margin-top:8px;">
-      <button type="submit" style="flex:1;background:#FFD100;color:#003366;border:none;padding:12px;font-weight:bold;border-radius:6px;cursor:pointer;">Absenden</button>
-      <button type="button" id="closeModalBtn" style="flex:1;background:#eee;color:#003366;border:none;padding:12px;font-weight:bold;border-radius:6px;cursor:pointer;">Abbrechen</button>
+      <div style="text-align:center;">
+        <button id="openModalBtn" style="background:#FFD100;color:#003366;border:none;border-radius:8px;padding:16px 36px;font-size:1.3em;cursor:pointer;font-family:inherit;font-weight:bold;box-shadow:0 4px 18px #00336630;">Jetzt anfragen</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Kontaktformular als Modal -->
+  <div id="kontaktModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('kontaktModal')">&times;</span>
+      <form name="Kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+        style="display:flex;flex-direction:column;gap:14px;">
+        <input type="hidden" name="form-name" value="Kontakt" />
+        <input type="hidden" name="bot-field"/>
+        <h2 style="text-align:center;font-family:inherit;font-weight:bold;font-size:1.5em;color:#003366;margin-bottom:10px;">Kontakt aufnehmen</h2>
+        <label>Name:<br>
+          <input type="text" name="Name" required style="width:100%;padding:8px;margin-top:4px;">
+        </label>
+        <label>E-Mail:<br>
+          <input type="email" name="E-Mail" required style="width:100%;padding:8px;margin-top:4px;">
+        </label>
+        <label>Telefonnummer:<br>
+          <input type="tel" name="Telefonnummer" pattern="^(\+49|0)[1-9]\d{7,14}$" required style="width:100%;padding:8px;margin-top:4px;">
+        </label>
+        <label>Nachricht:<br>
+          <textarea name="Nachricht" required style="width:100%;padding:8px;margin-top:4px;"></textarea>
+        </label>
+        <label style="font-size:0.95em;">
+          <input type="checkbox" name="DSGVO" required>
+          Ich habe die <a href="#" onclick="openModal('datenschutzModal');return false;">Datenschutzerklärung</a> gelesen und akzeptiere sie.
+        </label>
+        <div style="display:flex;gap:12px;margin-top:8px;">
+          <button type="submit" style="flex:1;background:#FFD100;color:#003366;border:none;padding:12px;font-weight:bold;border-radius:6px;cursor:pointer;">Absenden</button>
+          <button type="button" onclick="closeModal('kontaktModal')" style="flex:1;background:#eee;color:#003366;border:none;padding:12px;font-weight:bold;border-radius:6px;cursor:pointer;">Abbrechen</button>
+        </div>
+      </form>
     </div>
-  </form>
-</div>
-<!-- Datenschutz-Popup -->
-<div id="datenschutzModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('datenschutzModal')">&times;</span>
-</div>
-<footer>
-  © 2025 Own The Sun
-  <a href="#" onclick="openModal('datenschutzModal');return false;" style="margin-left:12px;">Datenschutzerklärung</a> |
-  <a href="#" onclick="openModal('impressumModal');return false;" style="margin-left:12px;">Impressum</a>
-</footer>
-<script>
-function openModal(modalId) {
-  // Erst alle Modals schließen
-  document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
-  // Dann gewünschtes öffnen
-  document.getElementById(modalId).style.display = 'block';
-  document.body.style.overflow = 'hidden';
-  // Outside-Klick schließt Modal
-  setTimeout(() => {
-    window.onclick = function(event) {
-      document.querySelectorAll('.modal').forEach(m => {
-        if (event.target === m) { m.style.display = 'none'; document.body.style.overflow=''; }
-      });
-    };
-  }, 1);
-}
-function closeModal(modalId) {
-  document.getElementById(modalId).style.display = 'none';
-  document.body.style.overflow = '';
-  window.onclick = null;
-}
-</script>
-<!-- Datenschutz-Popup -->
-<div id="datenschutzModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('datenschutzModal')">&times;</span>
-    <div class="modal-scroll">
+  </div>
+
+  <!-- Datenschutz-Popup -->
+  <div id="datenschutzModal" class="modal">
+    <div class="modal-content modal-scroll">
+      <span class="close" onclick="closeModal('datenschutzModal')">&times;</span>
       {{ partial "datenschutz-popup.html" . }}
     </div>
   </div>
-</div>
 
-<!-- Impressum-Popup -->
-<div id="impressumModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('impressumModal')">&times;</span>
-    <div class="modal-scroll">
+  <!-- Impressum-Popup -->
+  <div id="impressumModal" class="modal">
+    <div class="modal-content modal-scroll">
+      <span class="close" onclick="closeModal('impressumModal')">&times;</span>
       {{ partial "impressum-popup.html" . }}
     </div>
   </div>
-</div>
 
+  <footer style="text-align:center;margin-top:2em;">
+    © 2025 Own The Sun
+    <a href="#" onclick="openModal('datenschutzModal');return false;" style="margin-left:12px;">Datenschutzerklärung</a> |
+    <a href="#" onclick="openModal('impressumModal');return false;" style="margin-left:12px;">Impressum</a>
+  </footer>
+
+  <script>
+    // Modal-Öffnen für Kontakt
+    document.getElementById('openModalBtn').onclick = function() {
+      openModal('kontaktModal');
+    };
+
+    // Modal-Logik (nur 1 Modal gleichzeitig offen)
+    function openModal(modalId) {
+      document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+      document.getElementById(modalId).style.display = 'block';
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => {
+        window.onclick = function(event) {
+          document.querySelectorAll('.modal').forEach(m => {
+            if (event.target === m) { m.style.display = 'none'; document.body.style.overflow=''; }
+          });
+        };
+      }, 1);
+    }
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+      document.body.style.overflow = '';
+      window.onclick = null;
+    }
+  </script>
 </body>
 </html>
