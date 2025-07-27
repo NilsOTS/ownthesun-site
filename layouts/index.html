@@ -22,7 +22,6 @@
 <div style="text-align:center;">
   <button id="openModalBtn" style="background:#FFD100;color:#003366;border:none;border-radius:8px;padding:16px 36px;font-size:1.3em;cursor:pointer;font-family:inherit;font-weight:bold;box-shadow:0 4px 18px #00336630;">Jetzt anfragen</button>
 </div>
-
 <!-- Das Kontaktformular als Modal -->
 <div id="modalOverlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:#0009;z-index:9999;align-items:center;justify-content:center;">
   <form name="Kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field"
@@ -65,10 +64,10 @@
   // Optional: Schließen bei Klick außerhalb
   modal.onclick = e => { if(e.target === modal) closeBtn.click(); };
 </script>
-
     </main>
     <footer>
       © {{ now.Format "2006" }} Own The Sun
+    <a href='/datenschutz' target='_blank'>Datenschutzerklärung</a>
     </footer>
   </div>
 </body>
