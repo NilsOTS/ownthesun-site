@@ -51,7 +51,6 @@
     </div>
   </form>
 </div>
-
 <!-- MODAL LOGIK (am Ende des <body> platzieren!) -->
 <script>
   const openBtn = document.getElementById('openModalBtn');
@@ -66,9 +65,42 @@
 </script>
     </main>
     <footer>
-      © {{ now.Format "2006" }} Own The Sun
-      <a href="/impressum/">Impressum</a> | <a href="/datenschutz/">Datenschutz</a>
-    </footer>
+    <small>
+    © 2025 Own The Sun
+    <a href="#" onclick="openPopup('datenschutzPopup');return false;">Datenschutzerklärung</a> |
+    <a href="#" onclick="openPopup('impressumPopup');return false;">Impressum</a>
+  </small>
+</footer>
   </div>
+<!-- Pop-up Overlay für Datenschutz -->
+<div id="datenschutzPopup" class="popup-overlay" style="display:none;">
+  <div class="popup-content">
+    <button class="popup-close" onclick="closePopup('datenschutzPopup')">×</button>
+    {{ partial "datenschutz-popup.html" . }}
+  </div>
+</div>
+<!-- Pop-up Overlay für Impressum -->
+<div id="impressumPopup" class="popup-overlay" style="display:none;">
+  <div class="popup-content">
+    <button class="popup-close" onclick="closePopup('impressumPopup')">×</button>
+    {{ partial "impressum-popup.html" . }}
+  </div>
+</div>
+<script>
+function openPopup(id) {
+  document.getElementById(id).style.display = "flex";
+  document.body.style.overflow = "hidden";
+}
+function closePopup(id) {
+  document.getElementById(id).style.display = "none";
+  document.body.style.overflow = "";
+}
+window.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closePopup('datenschutzPopup');
+    closePopup('impressumPopup');
+  }
+});
+</script>
 </body>
 </html>

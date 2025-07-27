@@ -131,3 +131,20 @@ footer {
   h2 { font-size: 1.5rem; }
   body { padding: 1rem; }
 }
+<style>
+.popup-overlay {
+  position: fixed; left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.75); z-index: 10000; display: flex;
+  align-items: center; justify-content: center;
+}
+.popup-content {
+  background: #fff; max-width: 600px; width: 90vw; padding: 2rem; border-radius: 10px; position: relative;
+  max-height: 80vh; overflow-y: auto;
+}
+.popup-close {
+  position: absolute; right: 1rem; top: 1rem; border: none; background: none; font-size: 2rem; cursor: pointer;
+}
+@media (max-width: 600px) {
+  .popup-content { max-width: 95vw; padding: 1rem; }
+}
+</style>
