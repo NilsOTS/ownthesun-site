@@ -144,6 +144,47 @@ footer {
 .popup-close {
   position: absolute; right: 1rem; top: 1rem; border: none; background: none; font-size: 2rem; cursor: pointer;
 }
+/* Modal-Overlay */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(40,54,67,0.6);
+}
+
+/* Modal-Box */
+.modal-content {
+  background: #fff;
+  margin: 8vh auto 0 auto;
+  border-radius: 14px;
+  box-shadow: 0 0 32px #0005;
+  max-width: 540px;
+  width: 96vw;
+  padding: 2.5em 2em 1.7em 2em;
+  position: relative;
+  animation: fadeIn .2s;
+}
+
+/* Scrollbarer Bereich für viel Text */
+.modal-scroll {
+  max-height: 50vh;
+  overflow-y: auto;
+  margin-top: 1em;
+  padding-right: 0.5em;
+}
+
+/* Schließen-Button */
+.modal-content .close {
+  position: absolute; right: 1.1em; top: 0.8em;
+  font-size: 2em;
+  color: #283643; cursor: pointer;
+  font-weight: bold;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+
 @media (max-width: 600px) {
   .popup-content { max-width: 95vw; padding: 1rem; }
 }
