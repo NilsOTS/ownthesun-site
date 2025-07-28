@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Danke für Ihre Nachricht | Own The Sun</title>
+  <style>
+    /* Grundlegendes Layout */
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px;
+      line-height: 1.5;
+      background-color: #FFFFFF; /* Reinweiß */
+      color: #02476D; /* Deep Solar Blue */
+      margin: 0;
+      padding: 50px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    /* Container */
+    .container {
+      background: #FFFFFF;
+      max-width: 480px;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(2, 71, 109, 0.15);
+      text-align: center;
+    }
+    /* Headline (Playfair Display Bold, Caps, +3 letter spacing) */
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 36px;
+      letter-spacing: 0.15em; /* +3 ls */
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: #FCC90D; /* Solar Gold */
+    }
+    /* Text */
+    p {
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+    /* Link-Button (Gold background, Deep Solar Blue text) */
+    a.button {
+      display: inline-block;
+      padding: 16px 48px; /* 24px Padding (oben/unten 16px angepasst optisch) */
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      background-color: #FCC90D; /* Solar Gold */
+      color: #02476D; /* Deep Solar Blue */
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    a.button:hover {
+      background-color: #02476D; /* Deep Solar Blue */
+      color: #FCC90D; /* Solar Gold */
+    }
+  </style>
+  <!-- Google Fonts laden -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Vielen Dank!</h1>
+    <p>Ihre Nachricht wurde erfolgreich übermittelt.</p>
+    <p>Wir melden uns schnellstmöglich bei Ihnen.</p>
+    <a href="/" class="button" aria-label="Zurück zur Startseite">Zurück zur Startseite</a>
+  </div>
+</body>
+</html>
