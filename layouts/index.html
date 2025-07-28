@@ -112,6 +112,29 @@ gtag('config', 'G-EVPZ8872RM');
   <a href="#" onclick="openModal('impressumModal');return false;">Impressum</a> |
   <a href="#" onclick="openModal('datenschutzModal');return false;">Datenschutzerklärung</a>
 </footer>
-
+<!-- Modal für Kontaktformular -->
+<div id="contactModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('contactModal')">&times;</span>
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+      <input type="hidden" name="form-name" value="contact">
+      <p style="display:none;">
+        <label>Bitte nicht ausfüllen: <input name="bot-field"></label>
+      </p>
+      <p>
+        <label>Dein Name: <input type="text" name="name" required></label>
+      </p>
+      <p>
+        <label>Deine E-Mail: <input type="email" name="email" required></label>
+      </p>
+      <p>
+        <label>Deine Nachricht: <textarea name="message" required></textarea></label>
+      </p>
+      <p>
+        <button type="submit">Absenden</button>
+      </p>
+    </form>
+  </div>
+</div>
 </body>
 </html>
