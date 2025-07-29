@@ -262,4 +262,27 @@ footer a:hover { color: #FCC90D; }
   .modal-content { max-width: 99vw; padding: 1em; }
   .logo { max-width: 65%; }
 }
+/* Für klare, moderne Formulare */
+form label, form span, form input[type="checkbox"] {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 0.95em;
+  color: #02476D;
+  font-weight: 400;
+}
+form label[for="dsgvo"] b {
+  font-weight: 600;
+}
+form a {
+  color: #02476D;
+  text-decoration: underline;
+}
+form a:hover {
+  color: #FCC90D;
+  text-decoration: underline;
+}
+
+@media (max-width: 420px) {
+  .modal-content, form { font-size: 0.93em !important; }
+}
+
 
