@@ -1,119 +1,112 @@
-/* ===== Own The Sun – Styles (final clean version) ===== */
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400&family=Space+Grotesk:wght@400;700&display=swap');
 
-/* Basic Reset & Typography */
+/* Farbpalette */
+:root {
+  --blue: #02476D;
+  --gold: #FCC90D;
+  --white: #FFFFFF;
+}
+
+/* Reset & Base */
 *,
 *::before,
-*::after {
-  margin: 0; padding: 0; box-sizing: border-box;
-}
-html {
+*::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 18px; background: var(--white); color: var(--blue); }
+body {
   font-family: 'Inter', Arial, sans-serif;
-  font-size: 18px;
   line-height: 1.5;
-  background: #FFF;
-  color: #02476D;
+  background: var(--white);
+  color: var(--blue);
+  min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center;
 }
 
-/* Layout */
-body {
-  min-height: 100vh;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: flex-start;
-  background: #FFF;
-}
+/* Container */
 .container {
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 2.5rem;
+  max-width: 800px; width: 100%;
+  margin: 0 auto; text-align: center; padding-top: 2.5rem;
 }
 
 /* Logo */
 .logo {
-  max-width: 300px;
-  width: 90%;
-  margin: 0 auto 1.7rem auto;
-  display: block;
+  max-width: 37%; margin: 0 auto 1.7rem auto; display: block;
 }
 
-/* Headings */
+/* Headlines */
 h1, .headline {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
   letter-spacing: 0.03em;
-  font-size: 2.3rem;
-  color: #FCC90D;
-  margin-bottom: 0.8em;
   text-transform: uppercase;
+  color: var(--gold);
+  font-size: 2.3rem;
+  margin-bottom: 0.8em;
+}
+h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--gold);
+  margin-top: 1.3em;
+  margin-bottom: 0.6em;
+  text-transform: none;
 }
 .subheadline {
-  font-size: 1.1rem;
-  margin-bottom: 1.6em;
-  color: #02476D;
+  font-size: 1.1rem; margin-bottom: 1.6em; color: var(--blue);
   font-family: 'Inter', Arial, sans-serif;
 }
-.intro {
-  margin-bottom: 2.4em;
-  font-size: 1.05rem;
-  color: #02476D;
+
+/* Fließtext */
+p, li, ul, ol {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1rem;
+  color: var(--blue);
+  line-height: 1.5;
 }
+ul, ol { margin-left: 1.3em; margin-bottom: 1em; }
+
+.intro { margin-bottom: 2.4em; font-size: 1.05rem; color: var(--blue); }
+
+a { color: var(--blue); text-decoration: underline; }
+a:hover { color: var(--gold); }
 
 /* CTA Button */
-.cta-button {
-  background: #FFD100;
-  color: #003366;
+.cta-button, button[type="submit"] {
+  background: var(--gold);
+  color: var(--blue);
   border: none;
   border-radius: 8px;
   padding: 0.9em 2em;
   font-family: inherit;
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 4px 18px #00336630;
   transition: background .2s, color .2s;
 }
-.cta-button:hover,
-.cta-button:focus {
-  background: #003366;
-  color: #FFD100;
+.cta-button:hover, button[type="submit"]:hover,
+.cta-button:focus, button[type="submit"]:focus {
+  background: var(--blue);
+  color: var(--gold);
 }
 
-/* Kontakt Modal */
-.modal {
-  display: none;
-  position: fixed; z-index: 1000;
-  left: 0; top: 0; width: 100vw; height: 100vh;
-  overflow: auto;
-  background: rgba(2,71,109,0.60);
-}
-.modal-content {
-  background: #fff;
-  margin: 6vh auto 0 auto;
-  border-radius: 14px;
-  box-shadow: 0 0 32px #0005;
-  max-width: 420px;
-  width: 98vw;
-  padding: 2.1em 1.5em 1.3em 1.5em;
-  display: flex;
-  flex-direction: column;
-}
-.close {
-  position: absolute;
-  right: 1.2em; top: 1.2em;
-  font-size: 2em;
-  color: #283643;
-  cursor: pointer;
-  font-weight: bold;
-  background: none;
+button[type="button"], .cancel-btn {
+  background: #eee;
+  color: var(--blue);
   border: none;
+  padding: 0.7em 0;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background .18s, color .18s;
 }
+button[type="button"]:hover, .cancel-btn:hover { background: var(--gold); color: var(--blue); }
 
-/* Formular Styles */
+/* Formular */
 form label {
   text-align: left;
   font-size: 1em;
-  color: #02476D;
+  color: var(--blue);
   margin-bottom: 0.2em;
   display: block;
   font-weight: 500;
@@ -127,57 +120,65 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   margin-bottom: 1em;
   font-size: 1em;
   font-family: inherit;
-  color: #02476D;
+  color: var(--blue);
+  background: var(--white);
 }
-textarea {
-  min-height: 90px;
-  resize: vertical;
-}
-.dsgvo-checkbox {
-  font-size: 0.98em;
-  margin-bottom: 0.6em;
-  line-height: 1.4;
-}
-.dsgvo-checkbox input[type="checkbox"] {
-  margin-right: 8px;
-}
-
+textarea { min-height: 90px; resize: vertical; }
+input[type="checkbox"] { accent-color: var(--gold); }
+.dsgvo-checkbox { font-size: 0.98em; margin-bottom: 0.6em; line-height: 1.4; }
+.dsgvo-checkbox input[type="checkbox"] { margin-right: 8px; }
 .ds-hint {
   background: #f5f7fa;
   padding: 11px 14px;
   border-radius: 8px;
   font-size: 0.96em;
   margin: 8px 0 10px 0;
-  color: #02476D;
+  color: var(--blue);
 }
 
-.cancel-btn {
-  background: #eee;
-  color: #003366;
-  border: none;
-  padding: 0.7em 0;
-  font-weight: bold;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background .18s, color .18s;
+/* Modal (nur für Kontakt) */
+.modal {
+  display: none;
+  position: fixed; z-index: 1000;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  overflow: auto;
+  background: rgba(2,71,109,0.60);
 }
-.cancel-btn:hover { background: #ffd100; color: #003366; }
+.modal-content {
+  background: var(--white);
+  margin: 6vh auto 0 auto;
+  border-radius: 14px;
+  box-shadow: 0 0 32px #0005;
+  max-width: 440px; width: 96vw;
+  padding: 2.1em 1.5em 1.3em 1.5em;
+  display: flex; flex-direction: column;
+  font-family: 'Inter', Arial, sans-serif;
+}
+.close {
+  position: absolute;
+  right: 1.2em; top: 1.2em;
+  font-size: 2em;
+  color: var(--blue);
+  cursor: pointer;
+  font-weight: bold;
+  background: none; border: none;
+}
 
 /* Footer */
 footer {
   margin-top: 2.5rem;
   text-align: center;
   font-size: 1.01rem;
-  color: #02476D;
+  color: var(--blue);
   letter-spacing: 0.01em;
 }
 footer a {
-  color: #02476D;
+  color: var(--blue);
   text-decoration: underline;
   margin: 0 0.5em;
   font-weight: 500;
 }
-footer a:hover { color: #FCC90D; }
+footer a:hover { color: var(--gold); }
 
 /* Responsive */
 @media (max-width: 600px) {
@@ -185,4 +186,8 @@ footer a:hover { color: #FCC90D; }
   .container { padding: 0 0.4em; }
   .modal-content { max-width: 99vw; padding: 1em; }
   .logo { max-width: 90%; }
+}
+
+@media (max-width: 420px) {
+  .modal-content, form { font-size: 0.93em !important; }
 }
