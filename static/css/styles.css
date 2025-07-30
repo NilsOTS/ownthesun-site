@@ -1,108 +1,131 @@
+/* ===== OWN THE SUN STYLE GUIDE (CLEAN FINAL) ===== */
+
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400&family=Space+Grotesk:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;700&display=swap');
 
 /* Farbpalette */
 :root {
   --blue: #02476D;
   --gold: #FCC90D;
   --white: #FFFFFF;
+  --light: #f5f7fa;
 }
 
-/* Reset & Base */
-*,
-*::before,
-*::after { margin: 0; padding: 0; box-sizing: border-box; }
+/* ==== Reset & Base ==== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 18px; background: var(--white); color: var(--blue); }
 body {
   font-family: 'Inter', Arial, sans-serif;
-  line-height: 1.5;
-  background: var(--white);
   color: var(--blue);
+  background: var(--white);
   min-height: 100vh;
   display: flex; flex-direction: column; align-items: center;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-/* Container */
-.container {
-  max-width: 800px; width: 100%;
-  margin: 0 auto; text-align: center; padding-top: 2.5rem;
+/* ==== Container ==== */
+.container, .ots-container {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 48px 16px 32px 16px;
+  text-align: center;
 }
 
-/* Logo */
-.logo {
-  max-width: 37%; margin: 0 auto 1.7rem auto; display: block;
+/* ==== Logo ==== */
+.logo, .ots-logo {
+  max-width: 180px;
+  margin: 0 auto 36px auto;
+  display: block;
 }
 
-/* Headlines */
-h1, .headline {
+/* ==== Headlines ==== */
+h1, .headline, .ots-headline {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
   letter-spacing: 0.03em;
-  text-transform: uppercase;
   color: var(--gold);
-  font-size: 2.3rem;
-  margin-bottom: 0.8em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  font-size: 2.2em;
 }
-h2, h3, h4 {
+h2, h3, h4, .ots-content h2, .ots-content h3, .ots-content h4 {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
   color: var(--gold);
-  margin-top: 1.3em;
-  margin-bottom: 0.6em;
-  text-transform: none;
+  margin-top: 2em;
+  margin-bottom: 0.7em;
+  letter-spacing: 0.01em;
 }
 .subheadline {
-  font-size: 1.1rem; margin-bottom: 1.6em; color: var(--blue);
-  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 1.6em;
+  color: var(--blue);
 }
 
-/* Fließtext */
-p, li, ul, ol {
+/* ==== Fließtext & Listen ==== */
+p, li, ul, ol, .ots-content {
   font-family: 'Inter', Arial, sans-serif;
   font-size: 1rem;
   color: var(--blue);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 ul, ol { margin-left: 1.3em; margin-bottom: 1em; }
+.ots-content {
+  text-align: left;
+  margin-bottom: 36px;
+}
 
-.intro { margin-bottom: 2.4em; font-size: 1.05rem; color: var(--blue); }
+/* ==== Links ==== */
+a, .ots-content a, footer a {
+  color: var(--blue);
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.18s;
+}
+a:hover, .ots-content a:hover, footer a:hover {
+  color: var(--gold);
+}
 
-a { color: var(--blue); text-decoration: underline; }
-a:hover { color: var(--gold); }
-
-/* CTA Button */
-.cta-button, button[type="submit"] {
+/* ==== Button & CTA ==== */
+.cta-wrapper { text-align: center; margin: 40px 0 56px 0; }
+.cta-button, button[type="submit"], .ots-nav a {
   background: var(--gold);
   color: var(--blue);
   border: none;
   border-radius: 8px;
-  padding: 0.9em 2em;
+  padding: 16px 38px;
   font-family: inherit;
-  font-size: 1.1em;
+  font-size: 1.13em;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 4px 18px #00336630;
-  transition: background .2s, color .2s;
+  transition: background 0.2s, color 0.2s;
+  display: inline-block;
+  margin: 0.3em 0;
+  text-decoration: none;
 }
-.cta-button:hover, button[type="submit"]:hover,
-.cta-button:focus, button[type="submit"]:focus {
+.cta-button:hover, button[type="submit"]:hover, .ots-nav a:hover {
   background: var(--blue);
   color: var(--gold);
 }
-
 button[type="button"], .cancel-btn {
   background: #eee;
   color: var(--blue);
   border: none;
-  padding: 0.7em 0;
-  font-weight: bold;
   border-radius: 6px;
+  padding: 0.7em 1.2em;
+  font-weight: bold;
   cursor: pointer;
   transition: background .18s, color .18s;
 }
-button[type="button"]:hover, .cancel-btn:hover { background: var(--gold); color: var(--blue); }
+button[type="button"]:hover, .cancel-btn:hover {
+  background: var(--gold);
+  color: var(--blue);
+}
 
-/* Formular */
+/* ==== Formular ==== */
 form label {
   text-align: left;
   font-size: 1em;
@@ -127,8 +150,8 @@ textarea { min-height: 90px; resize: vertical; }
 input[type="checkbox"] { accent-color: var(--gold); }
 .dsgvo-checkbox { font-size: 0.98em; margin-bottom: 0.6em; line-height: 1.4; }
 .dsgvo-checkbox input[type="checkbox"] { margin-right: 8px; }
-.ds-hint {
-  background: #f5f7fa;
+.ds-hint, .dsgvo-trust {
+  background: var(--light);
   padding: 11px 14px;
   border-radius: 8px;
   font-size: 0.96em;
@@ -136,7 +159,7 @@ input[type="checkbox"] { accent-color: var(--gold); }
   color: var(--blue);
 }
 
-/* Modal (nur für Kontakt) */
+/* ==== Modal (nur für Kontakt) ==== */
 .modal {
   display: none;
   position: fixed; z-index: 1000;
@@ -153,6 +176,7 @@ input[type="checkbox"] { accent-color: var(--gold); }
   padding: 2.1em 1.5em 1.3em 1.5em;
   display: flex; flex-direction: column;
   font-family: 'Inter', Arial, sans-serif;
+  position: relative;
 }
 .close {
   position: absolute;
@@ -164,56 +188,42 @@ input[type="checkbox"] { accent-color: var(--gold); }
   background: none; border: none;
 }
 
-/* Footer */
-footer {
-  margin-top: 2.5rem;
+/* ==== Footer ==== */
+footer, .ots-footer {
+  margin-top: 40px;
+  padding-top: 16px;
   text-align: center;
   font-size: 1.01rem;
   color: var(--blue);
   letter-spacing: 0.01em;
 }
-footer a {
-  color: var(--blue);
-  text-decoration: underline;
-  margin: 0 0.5em;
-  font-weight: 500;
-}
-footer a:hover { color: var(--gold); }
 
-/* Responsive */
-@media (max-width: 600px) {
-  h1, .headline { font-size: 1.2rem; }
-  .container { padding: 0 0.4em; }
-  .modal-content { max-width: 99vw; padding: 1em; }
-  .logo { max-width: 90%; }
-}
-
-@media (max-width: 420px) {
-  .modal-content, form { font-size: 0.93em !important; }
-}
-.cta-wrapper {
+/* ==== Navigation für Unterseiten ==== */
+.ots-nav {
+  margin-top: 32px;
   text-align: center;
-  margin: 40px 0 56px 0; /* Mehr Abstand nach oben und unten */
+}
+.ots-nav a {
+  background: var(--gold);
+  color: var(--blue);
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-weight: 700;
+  font-size: 1.1em;
+  margin: 0 4px;
+  text-decoration: none;
+  transition: all 0.18s;
 }
 
-.cta-button {
-  background: #FFD100;
-  color: #003366;
-  border: none;
-  border-radius: 8px;
-  padding: 18px 38px;
-  font-size: 1.3em;
-  cursor: pointer;
-  font-family: inherit;
-  font-weight: bold;
-  box-shadow: 0 4px 18px #00336630;
-  transition: background 0.2s;
+/* ==== Responsive ==== */
+@media (max-width: 600px) {
+  h1, .headline, .ots-headline { font-size: 1.3rem; }
+  .container, .ots-container { padding: 0 0.4em; }
+  .modal-content { max-width: 99vw; padding: 1em; }
+  .logo, .ots-logo { max-width: 90%; }
+  .ots-nav a { padding: 10px 10vw; font-size: 1em; }
 }
-.cta-button:hover {
-  background: #ffea80;
-}
-footer {
-  margin-top: 40px;
-  padding-top: 16px;
+@media (max-width: 420px) {
+  .modal-content, form, .ots-content { font-size: 0.93em !important; }
 }
 
