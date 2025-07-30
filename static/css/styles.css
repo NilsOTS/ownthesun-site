@@ -191,3 +191,29 @@ footer a:hover { color: var(--gold); }
 @media (max-width: 420px) {
   .modal-content, form { font-size: 0.93em !important; }
 }
+.cta-wrapper {
+  text-align: center;
+  margin: 40px 0 56px 0; /* Mehr Abstand nach oben und unten */
+}
+
+.cta-button {
+  background: #FFD100;
+  color: #003366;
+  border: none;
+  border-radius: 8px;
+  padding: 18px 38px;
+  font-size: 1.3em;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  box-shadow: 0 4px 18px #00336630;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: #ffea80;
+}
+footer {
+  margin-top: 40px;
+  padding-top: 16px;
+}
+

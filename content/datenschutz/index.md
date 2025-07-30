@@ -84,13 +84,3 @@ Für Hosting (Netlify, USA) und E-Mail/IT-Dienste bestehen Verträge zur Auftrag
   <p class="small">Kontakt für Datenschutzanfragen: Nils Haack, info@ownthesun.de</p>
 </body>
 </html>
-
-    </main>
-    <footer>
-      © 2025 Own The Sun |
-      <a href="#" onclick="openModal('datenschutzModal');return false;">Datenschutzerklärung</a> |
-      <a href="#" onclick="openModal('impressumModal');return false;">Impressum</a>
-    </footer>
-  </div>
-</body>
-</html>
