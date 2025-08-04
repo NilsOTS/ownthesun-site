@@ -52,3 +52,4 @@ var klaroConfig = {
         }
     ]
 };
+klaro.install(klaroConfig);
