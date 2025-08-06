@@ -1,0 +1,76 @@
+<!-- Consentmanager (Autoblocking) – GANZ OBEN! -->
+<script type="text/javascript" data-cmp-ab="1" 
+src="https://cdn.consentmanager.net/delivery/autoblocking/0cb89007620a0.js"
+data-cmp-host="d.delivery.consentmanager.net"
+data-cmp-cdn="cdn.consentmanager.net"
+data-cmp-codesrc="0"></script>
+
+<title>{{ if .Title }}{{ .Title }} | Own The Sun{{ else }}Own The Sun – 30 Jahre freie Energie aus der Sonne für Dich{{ end }}</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Meta Description -->
+{{ if .Params.description }}
+  <meta name="description" content="{{ .Params.description }}">
+{{ else }}
+  <meta name="description" content="Premium-PV-Anlagen, Speicher, Wärmepumpen, Wallboxen & Energiemanagement – für nachhaltige Energie und 30 Jahre Unabhängigkeit.">
+{{ end }}
+
+<!-- Open Graph für Social Media -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="{{ .Title }} | Own The Sun">
+<meta property="og:site_name" content="Own The Sun">
+{{ if .Params.description }}
+  <meta property="og:description" content="{{ .Params.description }}">
+{{ else }}
+  <meta property="og:description" content="Premium-PV-Anlagen, Speicher, Wärmepumpen, Wallboxen & Energiemanagement – für nachhaltige Energie und 30 Jahre Unabhängigkeit.">
+{{ end }}
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ "/images/ownthesun-og.png" | absURL }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ .Title }} | Own The Sun">
+{{ if .Params.description }}
+  <meta name="twitter:description" content="{{ .Params.description }}">
+{{ else }}
+  <meta name="twitter:description" content="Premium-PV-Anlagen, Speicher, Wärmepumpen, Wallboxen & Energiemanagement – für nachhaltige Energie und 30 Jahre Unabhängigkeit.">
+{{ end }}
+<meta name="twitter:image" content="{{ "/images/ownthesun-og.png" | absURL }}">
+<meta name="twitter:site" content="@OWNTHESUN_HANDLE">
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/css/styles.css">
+
+<!-- Analytics & Pixel zentral steuern -->
+{{ partial "analytics.html" . }}
+
+<!-- Schema.org Organization (Social Profiles) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Own The Sun",
+  "url": "https://ownthesun.de/",
+  "logo": "https://ownthesun.de/images/OwnTheSun%20LOGO%20FINAL%202000.png",
+  "sameAs": [
+    "https://facebook.com/ownthesun.de",
+    "https://instagram.com/ownthesun.de",
+    "https://www.linkedin.com/company/OWNTHESUN/",
+    "https://twitter.com/OWNTHESUN",
+    "https://www.xing.com/pages/OWNTHESUN",
+    "https://www.youtube.com/@OWNTHESUN",
+    "https://www.tiktok.com/@OWNTHESUN",
+    "https://pinterest.de/OWNTHESUN"
+  ]
+}
+</script>
