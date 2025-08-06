@@ -1,40 +1,49 @@
 {{ define "main" }}
-<section>
-    Erlebe die Kraft der Sonne in Deinem Zuhause.<br>
-    Nachhaltige Energie für eine strahlende Zukunft.
+<div style="max-width: 630px; margin: 0 auto; text-align: center;">
+<div class="ots-home">
+  <img src="{{ "/images/OwnTheSun LOGO FINAL 2000.png" | relURL }}"
+       alt="Own The Sun Logo"
+       class="logo"
+       style="display:block;margin:0 auto 38px auto;max-width:180px;width:100%;" />
+
+  <h1 class="headline" style="margin-bottom:20px;">30 Jahre freie Sonnenenergie<br>für Ihre Unabhängigkeit</h1>
+  <p class="subheadline" style="margin-bottom:34px;">
+    Willkommen bei OWN THE SUN –<br> Ihr Partner für Photovoltaik, Speicher, Energiemanagement, Wallboxen und Wärmepumpen.<br>in Hamburg, Holstein und dem norddeutschen Umland
+    <ul style="margin-bottom:1.2em;">
+    Maßgeschneiderte Systeme, geprüft & persönlich betreut,<br> exklusiv für Eigentümer:innen und Unternehmen.
   </p>
 
-  <div class="cta-wrapper">
-    <button id="openModalBtn" class="cta-button">Jetzt anfragen</button>
+  <div class="cta-wrapper" style="margin-bottom:32px;">
+    <button id="openModalBtn" class="cta-button">Jetzt Beratung anfragen</button>
   </div>
 
-  <section style="margin-top: 40px;">
-    <h2>Warum Own The Sun?</h2>
-    <ul>
-      <li>Premium-Qualität: bis zu 30 Jahre Leistungsgarantie & geprüfte Partner</li>
-      <li>Alles aus einer Hand und einem System: PV-Anlage, Speicher, Wärmepumpe, Wallbox, EMS</li>
-      <li>Individuelle Beratung – persönlich, digital oder telefonisch</li>
-      <li>Volle Sicherheit: Keine Vorkasse, Zahlung nach Leistung, zertifizierte Prozesse</li>
+  <div style="max-width: 630px; margin: 0 auto; text-align: left;">
+    <h2>Warum OWN THE SUN?</h2>
+    <ul style="margin-bottom:1.2em;">
+      <li><b>bis zu 30 Jahre Leistungsgarantie</b> und höchste Qualitätsstandards </li>
+      <li><b>Komplettlösungen</b>: PV-Anlage, Speicher, Wärmepumpe, Wallbox, HEMS – alles aus einer Hand und einem System</li>
+      <li><b>Persönliche Betreuung</b>: vor Ort,telefonisch oder per Video - von der Erstberatung bis zur Nachbetreuung –  transparent & verbindlich</li>
+      <li><b>Fördermittelservice und regionale Genehmigungen</b> – individuell für Ihr Objekt</li>
+      <li><b>keine Anzahlung</b> - zertifizierte Partnerbetriebe und lückenlose Dokumentation</li>
     </ul>
-  </section>
-
-  <section style="margin-top: 40px;">
-    <h2>So läuft's ab</h2>
+    <h2>Ihr Weg zur eigenen Solarlösung</h2>
     <ol>
-      <li><strong>Beratung:</strong> Sie schildern uns Ihr Projekt, wir analysieren Ihr Dach & Bedarf</li>
-      <li><strong>Angebot:</strong> Sie erhälten ein individuelles, transparentes Angebot</li>
-      <li><strong>Installation:</strong> Umsetzung durch geprüfte Meisterbetriebe vor Ort</li>
-      <li><strong>Service:</strong> Support & Monitoring – auch nach dem Kauf, immer nur ein regionaler Ansprechpartner</li>
+      <li><b> Analyse & Beratung:</b> Sie schildern Ihr Vorhaben, unser Team prüft Dach, Standort und Potenziale.</li>
+      <li><b> Angebot & Planung:</b> Sie erhalten eine transparente Kalkulation, abgestimmt auf Ihre Anforderungen.</li>
+      <li><b> Installation & Inbetriebnahme:</b> Umsetzung durch regionale Meisterbetriebe – effizient und sauber.</li>
+      <li><b> Service & Monitoring:</b> Persönlicher Ansprechpartner, fortlaufende Betreuung, echte Sicherheit.</li>
     </ol>
-  </section>
-
-  </section>
+    <div class="dsgvo-trust" style="margin:28px 0 0 0;">
+      <strong>Datenschutz & Transparenz:</strong> Ihre Daten werden ausschließlich zur Beratung, Angebotserstellung und ggf. Weitervermittlung an ausgewählte regionale Fachpartner verwendet.
+    </div>
+  </div>
+</div>
 
 <!-- Kontaktformular (Modal) -->
-<div id="kontaktModal" class="modal" style="display:none;">
+<div id="kontaktModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('kontaktModal')">&times;</span>
-    <form id="contactForm" name="Kontakt" method="POST" data-netlify="false" style="display:flex;flex-direction:column;gap:14px;" autocomplete="off">
+    <form id="contactForm" name="Kontakt" method="POST" data-netlify="false" style="display:flex;flex-direction:column;gap:14px;">
       <h2>Kontakt aufnehmen</h2>
       <label>Name:<br>
         <input type="text" name="Name" required>
@@ -53,7 +62,7 @@
         Ich habe die <a href="/datenschutz/" target="_blank">Datenschutzerklärung</a> gelesen und akzeptiere sie.
       </label>
       <div class="dsgvo-trust">
-        <strong>Deine Daten sind sicher:</strong><br>100 % DSGVO-konform.
+        <strong>Ihre Daten sind sicher:</strong><br>100 % DSGVO-konform.
       </div>
       <div style="display:flex;gap:12px;margin-top:8px;">
         <button type="submit">Absenden</button>
