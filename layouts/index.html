@@ -1,95 +1,64 @@
 {{ define "main" }}
-<div style="max-width: 630px; margin: 0 auto; text-align: center;">
-<div class="ots-home">
-  <img src="{{ "/images/OwnTheSun LOGO FINAL 2000.png" | relURL }}"
-       alt="Own The Sun Logo"
-       class="logo"
-       style="display:block;margin:0 auto 38px auto;max-width:180px;width:100%;" />
-
-  <h1 class="headline" style="margin-bottom:20px;">30 Jahre freie Sonnenenergie<br>für Ihre Unabhängigkeit</h1>
-  <p class="subheadline" style="margin-bottom:34px;">
-    Willkommen bei OWN THE SUN –<br> Ihr Partner für Photovoltaik, Speicher, Energiemanagement, Wallboxen und Wärmepumpen.<br>in Hamburg, Holstein und dem norddeutschen Umland
-    <ul style="margin-bottom:1.2em;">
-    Maßgeschneiderte Systeme, geprüft & persönlich betreut,<br> exklusiv für Eigentümer:innen und Unternehmen.
-  </p>
-
-  <div class="cta-wrapper" style="margin-bottom:32px;">
-    <button id="openModalBtn" class="cta-button">Jetzt Beratung anfragen</button>
+<section class="ots-home">
+  <div class="ots-home-intro">
+    <p class="subheadline">
+      <strong>Unabhängigkeit, Sicherheit, hanseatische Verlässlichkeit.</strong>
+      <br>
+      Maßgeschneiderte Photovoltaik-Systeme, Energiemanagement & Wärmepumpen für Eigentümer:innen und Unternehmen in Norddeutschland.
+    </p>
   </div>
 
-  <div style="max-width: 630px; margin: 0 auto; text-align: left;">
-    <h2>Warum OWN THE SUN?</h2>
-    <ul style="margin-bottom:1.2em;">
-      <li><b>bis zu 30 Jahre Leistungsgarantie</b> und höchste Qualitätsstandards </li>
-      <li><b>Komplettlösungen</b>: PV-Anlage, Speicher, Wärmepumpe, Wallbox, HEMS – alles aus einer Hand und einem System</li>
-      <li><b>Persönliche Betreuung</b>: vor Ort,telefonisch oder per Video - von der Erstberatung bis zur Nachbetreuung –  transparent & verbindlich</li>
-      <li><b>Fördermittelservice und regionale Genehmigungen</b> – individuell für Ihr Objekt</li>
-      <li><b>keine Anzahlung</b> - zertifizierte Partnerbetriebe und lückenlose Dokumentation</li>
-    </ul>
-    <h2>Ihr Weg zur eigenen Solarlösung</h2>
-    <ol>
-      <li><b> Analyse & Beratung:</b> Sie schildern Ihr Vorhaben, unser Team prüft Dach, Standort und Potenziale.</li>
-      <li><b> Angebot & Planung:</b> Sie erhalten eine transparente Kalkulation, abgestimmt auf Ihre Anforderungen.</li>
-      <li><b> Installation & Inbetriebnahme:</b> Umsetzung durch regionale Meisterbetriebe – effizient und sauber.</li>
-      <li><b> Service & Monitoring:</b> Persönlicher Ansprechpartner, fortlaufende Betreuung, echte Sicherheit.</li>
-    </ol>
-    <div class="dsgvo-trust" style="margin:28px 0 0 0;">
-      <strong>Datenschutz & Transparenz:</strong> Ihre Daten werden ausschließlich zur Beratung, Angebotserstellung und ggf. Weitervermittlung an ausgewählte regionale Fachpartner verwendet.
-    </div>
-  </div>
-</div>
+  <ul class="ots-usps">
+    <li>Premium-Produkte, 30 Jahre Leistungsgarantie</li>
+    <li>Persönliche, unabhängige Beratung durch Experten</li>
+    <li>Geprüfte Montage – nur mit deutschen Meisterbetrieben</li>
+    <li>DSGVO-konform, rechtssicher, mit individuellem Service</li>
+  </ul>
 
-<!-- Kontaktformular (Modal) -->
+  <div class="cta-wrapper">
+    <button id="openModalBtn" class="cta-button cta-primary">Jetzt unverbindliche Beratung anfragen</button>
+  </div>
+</section>
+
+<!-- Modal-Kontaktformular wird NUR per Button geöffnet -->
 <div id="kontaktModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('kontaktModal')">&times;</span>
-    <form id="contactForm" name="Kontakt" method="POST" data-netlify="false" style="display:flex;flex-direction:column;gap:14px;">
-      <h2>Kontakt aufnehmen</h2>
+    <form name="Kontakt" method="POST" action="#" autocomplete="on" style="display:flex;flex-direction:column;gap:14px;">
       <label>Name:<br>
         <input type="text" name="Name" required>
       </label>
       <label>E-Mail:<br>
         <input type="email" name="E-Mail" required>
       </label>
-      <label>Telefonnummer (optional):<br>
-        <input type="tel" name="Telefonnummer" pattern="^(\+49|0)[1-9]\d{7,14}$">
+      <label>Telefon (optional):<br>
+        <input type="tel" name="Telefon">
       </label>
       <label>Nachricht:<br>
         <textarea name="Nachricht" required></textarea>
       </label>
-      <label class="dsgvo-checkbox">
-        <input id="dsgvo" type="checkbox" name="DSGVO" required>
-        Ich habe die <a href="/datenschutz/" target="_blank">Datenschutzerklärung</a> gelesen und akzeptiere sie.
+      <label style="font-size:0.97em;">
+        <input type="checkbox" name="DSGVO" required>
+        Ich akzeptiere die <a href="/datenschutz/" target="_blank">Datenschutzerklärung</a>.
       </label>
-      <div class="dsgvo-trust">
-        <strong>Ihre Daten sind sicher:</strong><br>100 % DSGVO-konform.
-      </div>
-      <div style="display:flex;gap:12px;margin-top:8px;">
-        <button type="submit">Absenden</button>
-        <button type="button" onclick="closeModal('kontaktModal')" style="background:#eee;color:#003366;">Abbrechen</button>
+      <div style="display:flex;gap:12px;">
+        <button type="submit" class="cta-button">Absenden</button>
+        <button type="button" onclick="closeModal('kontaktModal')" class="cancel-btn">Abbrechen</button>
       </div>
     </form>
   </div>
 </div>
 
 <script>
-document.getElementById('openModalBtn').onclick = function() {
-  openModal('kontaktModal');
-};
-function openModal(modalId) {
-  document.getElementById(modalId).style.display = 'block';
-  document.body.style.overflow = 'hidden';
-  setTimeout(() => {
-    window.onclick = function(event) {
-      var modal = document.getElementById(modalId);
-      if (event.target === modal) { modal.style.display = 'none'; document.body.style.overflow=''; }
-    };
-  }, 1);
-}
-function closeModal(modalId) {
-  document.getElementById(modalId).style.display = 'none';
-  document.body.style.overflow = '';
-  window.onclick = null;
-}
+  // Öffne Modal bei Button-Klick
+  document.getElementById('openModalBtn').onclick = function() {
+    document.getElementById('kontaktModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  };
+  // Schließe Modal
+  function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+    document.body.style.overflow = '';
+  }
 </script>
 {{ end }}
