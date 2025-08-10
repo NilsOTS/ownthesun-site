@@ -20,6 +20,8 @@ body{
   font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale
 }
 img{max-width:100%;height:auto;display:block}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
 
 /* ---- Typografie ---- */
 h1,h2,h3{
@@ -30,8 +32,6 @@ h1{font-size:clamp(28px,4.2vw,46px)}
 h2{font-size:clamp(22px,3vw,30px)}
 h3{font-size:clamp(18px,2.2vw,22px)}
 p,li{max-width:75ch}
-a{color:var(--blue);text-decoration:none}
-a:hover{text-decoration:underline}
 
 /* ---- Layout ---- */
 .container{max-width:1100px;margin:0 auto;padding:0 16px}
@@ -59,16 +59,45 @@ section{padding:2rem 1rem;margin-inline:auto;max-width:1100px}
 .btn-lg{padding:16px 26px;font-size:1.05rem}
 
 /* ---- Formulare (global) ---- */
-form input, for
-
-.checkbox-line {
-  display: flex;
-  align-items: center;
-  margin: 0.5em 0;
+form input, form textarea, form select, form button{
+  width:100%;max-width:700px;margin:.5rem auto;display:block;
+  padding:.7rem .85rem;border:1px solid var(--border);border-radius:8px;
+  background:#fff;font-size:1rem
+}
+form textarea{resize:vertical}
+form input:focus, form textarea:focus, form select:focus{
+  outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(252,201,13,.22)
 }
 
-.checkbox-line input[type="checkbox"] {
-  margin-right: 0.5em;
-  transform: scale(1.2);
+/* ---- Checkboxen inline (eine Zeile, klickbarer Text) ---- */
+.checkbox-line{
+  display:flex;align-items:center;gap:.5rem;margin:.5rem auto;max-width:700px;text-align:left
 }
+.checkbox-line input[type="checkbox"]{
+  flex-shrink:0;width:18px;height:18px;accent-color:var(--gold)
+}
+label.checkbox{ /* falls irgendwo <label class="checkbox"> verwendet wird */
+  display:flex;align-items:center;gap:.45rem;cursor:pointer;max-width:700px;margin:.5rem auto;line-height:1.45;font-size:.95rem
+}
+label.checkbox input[type="checkbox"]{flex-shrink:0;width:18px;height:18px;accent-color:var(--gold)}
 
+/* ---- Inline-Lead (Startseite) ---- */
+.inline-lead{padding-top:1rem}
+.inline-lead h2{text-align:center;margin-bottom:.75rem}
+
+/* ---- FAQ Teaser ---- */
+.faq-teaser ul{list-style:disc;padding-left:1.25rem;margin:.5rem 0 1rem}
+.faq-teaser li{margin:.25rem 0}
+
+/* ---- 404/Fehlseiten (optional) ---- */
+.not-found, .not-found h1{text-align:center}
+
+/* ---- Footer Kleinteile ---- */
+.microcopy{opacity:.85;font-size:.92rem}
+
+/* ---- Responsive ---- */
+@media (max-width: 640px){
+  .hero{padding:3rem 1rem}
+  .btn-lg{width:100%}
+  form input, form textarea, form button{max-width:100%}
+}
