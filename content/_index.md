@@ -1,11 +1,11 @@
 ---
 title: "Photovoltaik, Speicher, EMS & Wärmepumpen in Hamburg & Schleswig-Holstein | OWN THE SUN"
-description: "Hanseatische Autorität für PV, Speicher, EMS, Wallboxen & Wärmepumpen – ausschließlich im PLZ-Gebiet 200–204, 222, 224–228, 245, 253–255. Souveräne Beratung, geprüfte Meisterbetriebe, keine Vorkasse."
+description: "Ihre Autorität für PV, Speicher, EMS, Wallboxen & Wärmepumpen in Hamburg & Schleswig-Holstein. Souveräne Beratung, geprüfte Meisterbetriebe, keine Vorkasse."
 ---
 
 <section class="hero">
   <h1>30 Jahre Sonne – Ihr Vorteil aus dem Norden</h1>
-  <p>Unabhängigkeit beginnt auf Ihrem Dach – mit unserer Erfahrung in Hamburg, Holstein & Dithmarschen (PLZ 200–204, 222, 224–228, 245, 253–255).</p>
+  <p>Unabhängigkeit beginnt auf Ihrem Dach – mit unserer Erfahrung in Hamburg, Holstein & Dithmarschen.</p>
   <a class="btn" href="/kontakt/">Kostenfreie Erstberatung</a>
 </section>
 
@@ -28,7 +28,7 @@ description: "Hanseatische Autorität für PV, Speicher, EMS, Wallboxen & Wärme
 
 <section class="region">
   <h2>Regional – von der Elbe bis zur Nordsee</h2>
-  <p>Wir arbeiten ausschließlich im Norden: Hamburg, Schleswig-Holstein (nördlich der Elbe) & angrenzendes Niedersachsen – PLZ 200–204, 222, 224–228, 245, 253–255.</p>
+  <p>Wir arbeiten ausschließlich im Norden: Hamburg, Schleswig-Holstein (nördlich der Elbe).</p>
 </section>
 
 <section class="products">
