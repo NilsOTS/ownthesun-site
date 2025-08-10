@@ -4,8 +4,6 @@ description: "Ihre Autorität für PV, Speicher, EMS, Wallboxen & Wärmepumpen i
 ---
 
 <section class="hero">
-  <h1>30 Jahre Sonne – Ihr Vorteil aus dem Norden</h1>
-  <p>Unabhängigkeit beginnt auf Ihrem Dach – mit unserer Erfahrung in Hamburg, Holstein & Dithmarschen.</p>
   <a class="btn" href="/kontakt/">Kostenfreie Erstberatung</a>
 </section>
 
