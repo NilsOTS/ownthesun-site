@@ -27,7 +27,7 @@ Erzeugung, Speicherung und Verbraucher intelligent steuern – transparent per A
 <section class="lead-form">
   <h2>KURZ ANFRAGEN &amp; STARTEN</h2>
   
-  <form action="/anfrage" method="post">
+  <form action="https://automation.ownthesun.de/webhook/lead" method="post" accept-charset="utf-8">
     <input type="text" name="name" placeholder="Ihr Name*" required>
     <input type="email" name="email" placeholder="E-Mail*" required>
     <input type="text" name="plz" placeholder="PLZ (optional)">
