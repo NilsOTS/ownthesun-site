@@ -3,7 +3,7 @@
 <head>
   {{ partial "head.html" . }}
 </head>
-<body>
+<body class="{{ if .IsHome }}homepage{{ end }}">
   <div class="container">
     <header>
       <a href="/" aria-label="Zur Startseite">

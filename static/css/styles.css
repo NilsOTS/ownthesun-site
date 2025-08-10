@@ -1,0 +1,164 @@
+/* =========================
+   OWN THE SUN – Corporate Stylesheet
+   ========================= */
+
+/* ===== FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600&display=swap');
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --color-primary: #AE8569;
+  --color-secondary: #5C2D35;
+  --color-accent1: #EAB21A;
+  --color-accent2: #C96346;
+  --color-dark: #333333;
+  --color-light: #CCCCCC;
+  --color-white: #FFFFFF;
+
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+
+  --max-width: 1200px;
+}
+
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  line-height: 1.6;
+}
+
+/* ===== CONTAINERS ===== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ===== HEADINGS ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* ===== PARAGRAPHS ===== */
+p {
+  margin-bottom: 1rem;
+  font-size: 18px;
+}
+
+/* ===== LINKS ===== */
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-accent1);
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent1);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+/* ===== IMAGES ===== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
+/* ===== Startseite: Logo & Texte zentrieren ===== */
+body.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* ganze Bildschirmhöhe */
+  text-align: center;
+  padding: 20px;
+}
+
+body.homepage img {
+  max-width: 250px; /* Logo-Größe anpassen */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+body.homepage h1,
+body.homepage p {
+  margin: 10px 0;
+  max-width: 800px; /* bessere Lesbarkeit */
+}

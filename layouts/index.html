@@ -1,65 +1,21 @@
-{{ define "main" }}
-<section class="ots-home">
-  <div class="ots-home-intro">
-    <p class="subheadline">
-      <strong>Unabhängigkeit, Sicherheit, hanseatische Verlässlichkeit.</strong>
-      <br>
-      Maßgeschneiderte Photovoltaik-Systeme, Wärempumpen und Energiemanagementsysteme<br> 
-      für Eigentümer:innen und Unternehmen in Norddeutschland.
-    </p>
+<div class="ots-container">
+  <img src="/images/OwnTheSun%20LOGO%20FINAL%202000.png" alt="Own The Sun Logo" class="logo" style="margin: 0 auto 28px auto; display: block;">
+  <h1 class="headline" style="text-align:center;">30 Jahre freie Sonnenenergie<br>für Ihre Unabhängigkeit</h1>
+  <p class="subheadline" style="text-align:center;">
+    Premium-Produkte mit extra langer Garantie & persönlicher Beratung.
+  </p>
+  <div class="ots-content" style="text-align:center; max-width:600px; margin: 0 auto;">
+    <strong>Unabhängigkeit, Sicherheit, Verlässlichkeit.</strong><br>
+    Maßgeschneiderte Photovoltaik-Systeme, Wärmepumpen und Energiemanagementsysteme<br>
+    für Eigentümer:innen und Unternehmen in Norddeutschland.
+    <ul style="list-style:disc; margin:1em auto; text-align:left; display:inline-block;">
+      <li><strong>Premium-Produkte:</strong> bis zu 30 Jahre Leistungsgarantie</li>
+      <li><strong>Persönliche Beratung:</strong> vor Ort, telefonisch oder per Video – vor und nach der Installation</li>
+      <li><strong>Geprüfte Montage:</strong> nur mit deutschen Meisterbetrieben und lückenloser Dokumentation</li>
+      <li><strong>Keine Vorkasse:</strong> Zahlung nur nach Leistung</li>
+    </ul>
   </div>
-
-  <ul class="ots-usps">
-    <li><b>Premium-Produkte</b>: bis zu 30 Jahre Leistungsgarantie</li>
-    <li><b>Persönliche Beratung</b>: vor Ort, telefonisch oder per Video - vor und nach der Installation</li>
-    <li><b>Geprüfte Montage</b> – nur mit deutschen Meisterbetrieben, lückenlose Dokumentation</li>
-    <li><b>Keine Vorkasse</b> - Zahlung nur nach Leistung</li>
-  </ul>
-
   <div class="cta-wrapper">
-    <button id="openModalBtn" class="cta-button cta-primary">Jetzt unverbindliche Beratung anfragen</button>
-  </div>
-</section>
-
-<!-- Modal-Kontaktformular wird NUR per Button geöffnet -->
-<div id="kontaktModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('kontaktModal')">&times;</span>
-    <form name="Kontakt" method="POST" action="#" autocomplete="on" style="display:flex;flex-direction:column;gap:14px;">
-      <label>Name:<br>
-        <input type="text" name="Name" required>
-      </label>
-      <label>E-Mail:<br>
-        <input type="email" name="E-Mail" required>
-      </label>
-      <label>Telefon (optional):<br>
-        <input type="tel" name="Telefon">
-      </label>
-      <label>Nachricht:<br>
-        <textarea name="Nachricht" required></textarea>
-      </label>
-      <label style="font-size:0.97em;">
-        <input type="checkbox" name="DSGVO" required>
-        Ich akzeptiere die <a href="/datenschutz/" target="_blank">Datenschutzerklärung</a>.
-      </label>
-      <div style="display:flex;gap:12px;">
-        <button type="submit" class="cta-button">Absenden</button>
-        <button type="button" onclick="closeModal('kontaktModal')" class="cancel-btn">Abbrechen</button>
-      </div>
-    </form>
+    <button class="cta-button" style="font-size:1.18em;" onclick="alert('Kontaktformular folgt in Kürze!')">Jetzt unverbindliche Beratung anfragen</button>
   </div>
 </div>
-
-<script>
-  // Öffne Modal bei Button-Klick
-  document.getElementById('openModalBtn').onclick = function() {
-    document.getElementById('kontaktModal').style.display = 'block';
-    document.body.style.overflow = 'hidden';
-  };
-  // Schließe Modal
-  function closeModal(modalId) {
-    document.getElementById(modalId).style.display = 'none';
-    document.body.style.overflow = '';
-  }
-</script>
-{{ end }}
