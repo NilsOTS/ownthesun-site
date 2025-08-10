@@ -1,54 +1,38 @@
 ---
 title: "Datenschutzerklärung"
-date: 2025-07-29
+description: "Informationen zur Verarbeitung personenbezogener Daten auf ownthesun.de"
+date: 2025-08-10
 ---
 
-**1. Datenschutz auf einen Blick**  
-Der Schutz Ihrer persönlichen Daten ist uns wichtig. Nachfolgend erhalten Sie einen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website besuchen.
+## 1. Verantwortlicher
+OWN THE SUN – Inh. Nils Haack  
+Stinnhorn 10c, 25469 Halstenbek, Deutschland  
+E-Mail: info@ownthesun.de
 
-**2. Verantwortliche Stelle**  
-Own The Sun  
-Musterstraße 12  
-12345 Hamburg  
-Deutschland  
-E-Mail: [info@ownthesun.de](mailto:info@ownthesun.de)
+## 2. Hosting & Sicherheit
+Statische Auslieferung via CDN, Übertragung per TLS/HTTPS. Server-/Sicherheitslogs nur zur Gewährleistung der Stabilität (Art. 6 Abs. 1 lit. f DSGVO).
 
-**3. Erhebung und Speicherung personenbezogener Daten**  
-Ihre Daten werden erhoben, wenn Sie uns diese mitteilen – etwa durch Ausfüllen des Kontaktformulars, Anmeldung für den Newsletter oder durch eine Anfrage. Weitere Daten werden automatisch beim Besuch der Website durch unsere IT-Systeme erfasst (z. B. IP-Adresse, Browser, Betriebssystem).
+## 3. Einwilligungs-Management
+Statistik-/Marketing-Skripte (z. B. Google Tag Manager/Analytics, Meta Pixel) werden erst nach Ihrer Einwilligung geladen (Art. 6 Abs. 1 lit. a DSGVO). Widerruf jederzeit über das Banner.
 
-**4. Zweck der Datenverarbeitung**  
-Wir verarbeiten Ihre personenbezogenen Daten nur zu den Zwecken, für die Sie uns diese zur Verfügung stellen, insbesondere zur Kontaktaufnahme, Bearbeitung von Anfragen, Lead-Generierung, Angebotserstellung und ggf. Weitergabe oder Verkauf Ihrer Daten an sorgfältig ausgewählte Dritte (z. B. Vertriebspartner, Fachunternehmen, Installationsbetriebe) zur Vertragsanbahnung und Vermittlung passender Angebote im Bereich erneuerbare Energien.  
-Die Weitergabe oder der Verkauf erfolgt ausschließlich im Rahmen der geltenden gesetzlichen Bestimmungen.
+## 4. Kontakt & Lead-Anfragen
+**Zweck:** Beantwortung Ihrer Anfrage, Beratung, Angebotserstellung, Projektvorbereitung.  
+**Daten:** Name, E-Mail, Telefon (optional), PLZ (optional), Nachricht, Metadaten (Zeitstempel, Referrer).  
+**Rechtsgrundlagen:** Art. 6 Abs. 1 lit. b (vorvertraglich), Art. 6 Abs. 1 lit. f (Kommunikation), **Art. 6 Abs. 1 lit. a** für **optionale** Weitergabe an Fachpartner (Abschnitt 5).  
+**Speicherdauer:** Grundsatz 12 Monate nach letzter Aktivität bzw. bis Widerruf/Widerspruch; gesetzliche Pflichten unberührt.
 
-**5. Ihre Rechte**  
-Sie haben das Recht auf Auskunft über Ihre gespeicherten Daten, deren Herkunft und Empfänger, den Zweck der Datenverarbeitung, sowie ggf. ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten. Wenden Sie sich hierzu jederzeit an uns (siehe oben).
+## 5. Weitergabe an ausgewählte Fachpartner (optional)
+Nur **mit Ihrer ausdrücklichen Einwilligung** geben wir Ihre Anfrage an sorgfältig ausgewählte Meisterbetriebe/Fachpartner in der Region weiter (z. B. Elektro-, Dach- oder Heizungsbetriebe) – ausschließlich zur Angebotserstellung.  
+**Rechtsgrundlage:** Art. 6 Abs. 1 lit. a DSGVO. **Widerruf** jederzeit an info@ownthesun.de.  
+**Hinweis:** Ohne Einwilligung findet **keine** Weitergabe statt. **Kein Verkauf personenbezogener Daten.**
 
-**6. Datensicherheit**  
-Wir setzen technische und organisatorische Maßnahmen ein, um Ihre Daten bestmöglich zu schützen. Die Übertragung der Website erfolgt verschlüsselt (SSL/TLS).
+## 6. Auftragsverarbeitung
+Wir nutzen automatisierte Workflows (z. B. n8n) in der EU. Auftragsverarbeitungsverträge nach Art. 28 DSGVO bestehen.
 
-**7. Cookies und Tools**  
-Unsere Website verwendet Cookies. Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden und die eine Analyse der Benutzung der Website ermöglichen. Die meisten der von uns verwendeten Cookies sind „Session-Cookies“ und werden nach Ende Ihres Besuchs automatisch gelöscht. Andere Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese löschen.
+## 7. Analyse & Marketing (nur mit Einwilligung)
+Google Tag Manager/Analytics und Meta Pixel können zur Reichweitenmessung/Kampagnenoptimierung eingesetzt werden (Art. 6 Abs. 1 lit. a). Widerruf jederzeit über das Banner.
 
-Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browsers aktivieren.
+## 8. Ihre Rechte
+Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerspruch. Beschwerderecht bei einer Datenschutzaufsichtsbehörde.
 
-**8. Google Analytics und Drittanbieter**  
-Soweit auf unserer Website Google Analytics oder andere Tracking-Tools eingesetzt werden, geschieht dies auf Basis Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO. Sie können die Erfassung Ihrer Daten durch Google Analytics verhindern, indem Sie die Cookie-Einstellungen anpassen oder ein entsprechendes Browser-Add-on installieren.
-
-**9. Einbindung von Diensten und Inhalten Dritter**  
-Auf unserer Website werden Inhalte Dritter eingebunden (z. B. Kartenmaterial von Google Maps, YouTube-Videos). Dabei kann es vorkommen, dass diese Anbieter Ihre IP-Adresse erhalten.
-
-**10. Newsletter**  
-Wenn Sie unseren Newsletter abonnieren, verwenden wir Ihre E-Mail-Adresse ausschließlich zum Versand des Newsletters und geben diese nicht ohne Ihre Einwilligung weiter. Sie können den Newsletter jederzeit über den im Newsletter angegebenen Link abbestellen.
-
-**11. Lead-Weitergabe und -Verkauf**  
-Mit dem Absenden eines Kontaktformulars oder einer Anfrage erklären Sie sich damit einverstanden, dass Ihre angegebenen Kontaktdaten (Leads) zum Zwecke der eigenen Angebots- oder Vertragsanbahnung genutzt und – sofern für die Bearbeitung erforderlich oder zur Vermittlung passender Angebote sinnvoll – an sorgfältig ausgewählte Dritte weitergegeben oder verkauft werden dürfen.
-
-**12. Widerspruchsrecht**  
-Sie können der Verarbeitung Ihrer personenbezogenen Daten jederzeit widersprechen. Eine formlose Mitteilung per E-Mail an [info@ownthesun.de](mailto:info@ownthesun.de) genügt.
-
-**13. Änderungen dieser Datenschutzerklärung**  
-Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen.
-
----
-
-*Letzte Aktualisierung: Juli 2025*
+*Stand: 10.08.2025*

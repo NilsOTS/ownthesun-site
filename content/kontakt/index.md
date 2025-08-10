@@ -1,49 +1,69 @@
 ---
-title: "Kontakt"
+title: "Kontakt – Kostenfreie Erstberatung"
 slug: "kontakt"
-description: "Nimm Kontakt mit Own The Sun auf – wir beraten ehrlich & persönlich."
+description: "Souveräne Beratung für Eigentümer:innen in Hamburg & Schleswig-Holstein – OWN THE SUN."
 ---
 
-<img src="/images/OwnTheSun%20LOGO%20FINAL%202000.png" alt="Own The Sun Logo" class="logo" />
+<img src="/images/OwnTheSun%20LOGO%20FINAL%202000.png" alt="OWN THE SUN Logo" class="logo" />
 
-# Kontaktiere uns
+# Kontakt
 
-Wir beraten dich ehrlich, persönlich und unverbindlich.  
-Nutze das Kontaktformular – wir melden uns schnellstmöglich!
+Wir melden uns in der Regel **innerhalb von 24 Stunden** – telefonisch oder per E-Mail.
 
-<form id="kontaktform" method="POST" action="https://YOUR-N8N-HOST/webhook/ownthesun-kontakt" autocomplete="on">
-  <label>Name:<br>
-    <input type="text" name="Name" required>
+<form id="lead-form" action="https://automation.ownthesun.de/webhook/lead" method="post" accept-charset="utf-8" autocomplete="on">
+  <label for="name">Ihr Name*</label>
+  <input id="name" name="name" type="text" required>
+
+  <label for="email">E-Mail*</label>
+  <input id="email" name="email" type="email" required>
+
+  <label for="phone">Telefon (optional)</label>
+  <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+49 ...">
+
+  <label for="zip">PLZ (optional)</label>
+  <input id="zip" name="zip" type="text" inputmode="numeric" pattern="[0-9]{5}" placeholder="z. B. 25469">
+
+  <label for="message">Worum geht es?</label>
+  <textarea id="message" name="message" rows="5" placeholder="Dach, gewünschte Lösung (PV/Speicher/Wärmepumpe/EMS), Zeithorizont"></textarea>
+
+  <!-- Pflicht-Checkbox: Legal -->
+  <label class="checkbox">
+    <input type="checkbox" name="legal_accept" value="yes" required>
+    Ich habe die <a href="/datenschutz/" target="_blank" rel="noopener">Datenschutzerklärung</a> und die
+    <a href="/nutzungsbedingungen/" target="_blank" rel="noopener">Nutzungsbedingungen</a> gelesen und akzeptiere sie.
   </label>
-  <label>E-Mail:<br>
-    <input type="email" name="E-Mail" required>
+
+  <!-- Optionale Einwilligung: Partnerweitergabe (separat, NICHT vorangekreuzt) -->
+  <label class="checkbox">
+    <input type="checkbox" name="partner_share_optin" value="yes">
+    Ich möchte, dass meine Anfrage – falls sinnvoll – an ausgewählte, geprüfte Fachpartner in meiner Region weitergegeben wird
+    (widerruflich per E-Mail an info@ownthesun.de).
   </label>
-  <label>Telefonnummer (optional):<br>
-    <input type="tel" name="Telefonnummer">
-  </label>
-  <label>Nachricht:<br>
-    <textarea name="Nachricht" required></textarea>
-  </label>
-  <label for="dsgvo" style="display:flex;align-items:flex-start;font-size:0.97em;line-height:1.4;margin-bottom:10px;">
-    <input id="dsgvo" type="checkbox" name="DSGVO" required style="margin:2px 10px 0 0;">
-    <span>
-      Ich habe die <a href="/datenschutz/" target="_blank" rel="noopener">Datenschutzerklärung</a> und die <a href="/nutzungsbedingungen/" target="_blank" rel="noopener">Nutzungsbedingungen</a> gelesen und akzeptiere sie.<br>
-      Ich bin einverstanden, dass meine Kontaktdaten zur Vertragsanbahnung oder Vermittlung an geeignete Partner <b>weitergegeben oder verkauft</b> werden dürfen.
-    </span>
-  </label>
-  <div class="dsgvo-trust">
-    <strong>Deine Daten sind sicher:</strong><br>100 % DSGVO-konform.
+
+  <!-- Honeypot gegen Spam -->
+  <div style="position:absolute; left:-5000px;" aria-hidden="true">
+    <label for="website">Bitte freilassen</label>
+    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
   </div>
-  <div style="display:flex;gap:12px;margin-top:8px;">
-    <button type="submit">Absenden</button>
-    <button type="button" onclick="window.location='/'" style="background:#eee;color:#003366;">Abbrechen</button>
-  </div>
+
+  <!-- Metadaten für n8n -->
+  <input type="hidden" name="page_url" value="{{ .Permalink }}">
+  <input type="hidden" name="source" value="kontakt">
+  <input type="hidden" name="timestamp" value="{{ now }}">
+
+  <button type="submit" class="btn">Kostenfreie Erstberatung anfragen</button>
 </form>
 
+<p class="microcopy">Zielgebiet: PLZ 200–204, 222, 224–228, 245, 253–255. Keine Vorkasse. Faire, transparente Angebote.</p>
+
 <script>
-document.getElementById("kontaktform").onsubmit = function() {
-  setTimeout(function() {
-    window.location.href = "/thank-you/";
-  }, 300);
-};
+  // GTM/Analytics-Event (optional)
+  window.dataLayer = window.dataLayer || [];
+  document.getElementById('lead-form')?.addEventListener('submit', function(){
+    window.dataLayer.push({
+      event: 'lead_submit',
+      form_location: 'kontakt',
+      consent_partner_share: !!document.querySelector('input[name="partner_share_optin"]:checked')
+    });
+  });
 </script>
