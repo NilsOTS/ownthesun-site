@@ -1,181 +1,62 @@
+/* ===========================
+   OWN THE SUN – CI Stylesheet
+   =========================== */
+
+/* ---- Farb- & Typo-Variablen ---- */
 :root{
-  --gold:#FCC90D;             /* Solar Gold */
-  --blue:#02476D;             /* Deep Solar Blue */
-  --white:#FFFFFF;
+  --gold:#FCC90D;              /* Solar Gold */
+  --blue:#02476D;              /* Deep Solar Blue */
   --text:#02476D;
+  --bg:#FFFFFF;
   --border:#c9d7e3;
 }
 
+/* ---- Reset/Grundlagen ---- */
 html{box-sizing:border-box;scroll-behavior:smooth}
 *,*:before,*:after{box-sizing:inherit}
-
 body{
-  margin:0; color:var(--text); background:var(--white);
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;
-  font-size:18px; line-height:1.6;
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale
 }
+img{max-width:100%;height:auto;display:block}
 
-/* Typo */
+/* ---- Typografie ---- */
 h1,h2,h3{
-  font-family:"Playfair Display", Georgia, serif;
-  text-transform:uppercase; letter-spacing:.03em; margin:0 0 .5rem; color:var(--blue);
+  font-family:"Playfair Display",Georgia,serif;
+  color:var(--blue); text-transform:uppercase; letter-spacing:.03em; margin:0 0 .5rem
 }
 h1{font-size:clamp(28px,4.2vw,46px)}
 h2{font-size:clamp(22px,3vw,30px)}
 h3{font-size:clamp(18px,2.2vw,22px)}
 p,li{max-width:75ch}
-a{color:var(--blue)}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
 
-/* Container */
+/* ---- Layout ---- */
 .container{max-width:1100px;margin:0 auto;padding:0 16px}
-
-/* Logo */
 .logo{display:block;margin:24px auto;max-width:340px;height:auto}
 
-/* Sections */
-section{padding:2rem 1rem;margin-inline:auto;max-width:1100px}
-
-/* Hero + Zentrierung auf Startseite */
-.hero{text-align:center;padding:4rem 1rem}
+/* ---- Hero / Startseite ---- */
+.hero{padding:4rem 1rem;text-align:center}
 #home .hero, #home h1, #home h2{ text-align:center }
 
-/* Trust */
+/* ---- Sektionen ---- */
+section{padding:2rem 1rem;margin-inline:auto;max-width:1100px}
 .trust ul{list-style:none;padding:0;margin:1rem auto;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
 .trust li{border:1px solid #e6eef4;border-radius:8px;padding:.5rem .75rem}
 
-/* Buttons */
-.btn,.btn-secondary,button{
-  display:inline-block;border-radius:8px;padding:14px 20px;text-decoration:none;font-weight:600;
-  border:2px solid var(--gold);cursor:pointer
+/* ---- Buttons ---- */
+.btn, .btn-secondary, button{
+  display:inline-block;border-radius:8px;padding:14px 20px;
+  font-weight:600;text-decoration:none;cursor:pointer;border:2px solid var(--gold);
+  transition:transform .06s ease, background-color .15s ease
 }
 .btn{background:var(--gold);color:var(--blue)}
-.btn:hover{background:transparent;color:var(--blue)}
+.btn:hover{background:transparent;color:var(--blue);transform:translateY(-1px)}
 .btn-secondary{background:transparent;color:var(--blue)}
 .btn-secondary:hover{background:var(--gold);color:var(--blue)}
+.btn-lg{padding:16px 26px;font-size:1.05rem}
 
-/* Forms */
-form input, form textarea, form button{
-  width:100%;max-width:700px;margin:.5rem auto;display:block;padding:.7rem .85rem;border:1px solid var(--border);border-radius:8px
-}
-label.checkbox{display:block;max-width:700px;margin:.5rem auto}
-.small{font-size:.9rem}
-.microcopy{opacity:.8;font-size:.92rem}
-
-/* Inline-Lead Sektion */
-.inline-lead h2{margin-bottom:.5rem}
-
-/* FAQ Teaser */
-.faq-teaser ul{list-style:disc;padding-left:1.25rem}
-
-/* 404 Hilfsklasse (falls genutzt) */
-.not-found, .not-found h1{text-align:center}
-
-/* === UI/UX Feinabstimmung === */
-
-/* Mehr Weißraum vor Inline-Formular (Startseite) */
-.products { margin-bottom: 1.5rem; }
-.inline-lead { padding-top: 1rem; }
-
-/* Formular-Überschrift zentriert */
-.inline-lead h2 { text-align: center; margin-bottom: .75rem; }
-
-/* Felder besser lesbar */
-form input, form textarea {
-  background: #fff;
-  outline: none;
-}
-form input:focus, form textarea:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(252,201,13,.2);
-}
-
-/* Checkbox-Zeilen enger, aber klar */
-label.checkbox { line-height: 1.4; }
-
-/* Großer, klarer CTA */
-.btn.btn-lg { padding: 16px 26px; font-size: 1.05rem; }
-#home .btn.btn-lg { margin-top: .25rem; }
-
-/* FAQ-Teaser: bessere Klickflächen */
-.faq-teaser ul { margin: .5rem 0 1rem; }
-.faq-teaser li { margin: .25rem 0; }
-.faq-teaser a { text-decoration: underline; }
-
-/* Abstand vor FAQ-Heading */
-.faq-teaser h2 { margin-top: 1.75rem; }
-
-/* Mobile Tweaks */
-@media (max-width: 640px) {
-  .hero { padding: 3rem 1rem; }
-  .btn.btn-lg { width: 100%; }
-  form input, form textarea, form button { max-width: 100%; }
-}
-
-/* Checkbox + Text in einer Zeile */
-label.checkbox {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.95rem;
-  cursor: pointer;
-}
-
-label.checkbox input[type="checkbox"] {
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  accent-color: var(--gold);
-}
-
-/* Formular-Layout */
-.lead-form {
-  text-align: center;
-  max-width: 600px;
-  margin: 2rem auto;
-}
-
-.lead-form input[type="text"],
-.lead-form input[type="email"] {
-  display: block;
-  width: 100%;
-  padding: 0.6rem;
-  margin: 0.4rem 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-
-/* Checkbox-Layout */
-label.checkbox {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.95rem;
-  cursor: pointer;
-  margin-top: 0.5rem;
-  text-align: left;
-}
-
-label.checkbox input[type="checkbox"] {
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  accent-color: #EAB21A; /* Goldfarbe */
-}
-
-/* Button */
-.lead-form button {
-  background-color: #EAB21A;
-  color: #002B49;
-  border: none;
-  border-radius: 6px;
-  padding: 0.8rem 1.2rem;
-  font-size: 1rem;
-  font-weight: bold;
-  margin-top: 1rem;
-  cursor: pointer;
-}
-
-.lead-form button:hover {
-  background-color: #d3a218;
-}
+/* ---- Formulare (global) ---- */
+form input, for
