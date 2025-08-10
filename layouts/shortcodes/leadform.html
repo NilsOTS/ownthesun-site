@@ -1,0 +1,43 @@
+<form id="lead-inline" action="https://automation.ownthesun.de/webhook/lead" method="post" accept-charset="utf-8" autocomplete="on">
+  <input type="text" name="name" placeholder="Ihr Name*" required>
+  <input type="email" name="email" placeholder="E-Mail*" required>
+  <input type="text" name="zip" placeholder="PLZ (optional)" pattern="[0-9]{5}">
+  
+  <div class="checkbox-line">
+    <input type="checkbox" id="datenschutz" name="legal_accept" value="yes" required>
+    <label for="datenschutz">
+      Ich akzeptiere <a href="/datenschutz/" target="_blank" rel="noopener">Datenschutz</a> &amp;
+      <a href="/nutzungsbedingungen/" target="_blank" rel="noopener">Nutzungsbedingungen</a>.
+    </label>
+  </div>
+
+  <div class="checkbox-line">
+    <input type="checkbox" id="weitergabe" name="partner_share_optin" value="yes">
+    <label for="weitergabe">
+      Optional: Anfrage an ausgewählte, geprüfte Fachpartner in meiner Region weitergeben (widerruflich).
+    </label>
+  </div>
+
+  <!-- Honeypot -->
+  <div style="position:absolute; left:-5000px;" aria-hidden="true">
+    <input type="text" name="website" tabindex="-1" autocomplete="off">
+  </div>
+
+  <!-- Metadaten für n8n -->
+  <input type="hidden" name="page_url" value="{{ .Page.Permalink }}">
+  <input type="hidden" name="source" value="homepage-inline">
+  <input type="hidden" name="timestamp" value="{{ now }}">
+
+  <button type="submit" class="btn btn-lg">Kostenfreie Erstberatung anfragen</button>
+</form>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  document.getElementById('lead-inline')?.addEventListener('submit', function(){
+    window.dataLayer.push({
+      event:'lead_submit',
+      form_location:'homepage_inline',
+      consent_partner_share: !!document.querySelector('#lead-inline input[name="partner_share_optin"]:checked')
+    });
+  });
+</script>
