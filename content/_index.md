@@ -22,19 +22,18 @@ title: "Willkommen bei Own The Sun"
     <input type="text" id="zip" name="zip" required>
 
     <div class="checkbox-line">
-      <input type="checkbox" id="datenschutz" name="datenschutz" required>
-      <label for="datenschutz">
-        Ich habe die <a href="/datenschutz/">Datenschutzerklärung</a> und <a href="/nutzungsbedingungen/">Nutzungsbedingungen</a> gelesen und akzeptiere diese.
-      </label>
-    </div>
+    <input type="checkbox" id="datenschutz" name="datenschutz" required>
+    <label for="datenschutz">
+    Ich habe die <a href="/datenschutz/">Datenschutzerklärung</a> und <a href="/nutzungsbedingungen/">Nutzungsbedingungen</a> gelesen und akzeptiere diese.
+    </label>
+</div>
 
-    <div class="checkbox-line">
-      <input type="checkbox" id="weitergabe" name="weitergabe">
-      <label for="weitergabe">
-        Ich bin einverstanden, dass meine Anfrage an ausgewählte Fachpartner weitergegeben wird.
-      </label>
-    </div>
-
+<div class="checkbox-line">
+  <input type="checkbox" id="weitergabe" name="weitergabe">
+  <label for="weitergabe">
+    Ich bin einverstanden, dass meine Anfrage an ausgewählte Fachpartner weitergegeben wird.
+  </label>
+</div>
     <button type="submit">Jetzt Beratung anfragen</button>
   </form>
 </section>
