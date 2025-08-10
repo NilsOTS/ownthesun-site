@@ -21,15 +21,7 @@ title: "Willkommen bei Own The Sun"
     <label for="zip">PLZ*</label>
     <input type="text" id="zip" name="zip" required>
 
-    <div class="checkbox-line">
-    <input type="checkbox" id="datenschutz" name="legal_accept" value="yes" required>
-    <label for="datenschutz">Ich akzeptiere <a href="/datenschutz/">Datenschutz</a> &amp; <a     href="/nutzungsbedingungen/">Nutzungsbedingungen</a>.</label>
-  </div>
-    <div class="checkbox-line">
-    <input type="checkbox" id="weitergabe" name="partner_share_optin" value="yes">
-    <label for="weitergabe">Optional: Anfrage an ausgewählte Fachpartner weitergeben (widerruflich).</label>
-  </div>
-
+    {{ partial "form.html" . }}
 </div>
     <button type="submit">Jetzt Beratung anfragen</button>
   </form>
