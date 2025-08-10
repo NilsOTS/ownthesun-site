@@ -5,7 +5,7 @@ description: "Hanseatische Autorität für PV, Speicher, EMS, Wallboxen & Wärme
 
 <section class="hero">
   <h1>Unabhängige Energie – präzise geplant für den Norden</h1>
-  <p>PV, Speicher, Wärmepumpe & Wallbox aus einer Hand. Planung, Installation, Abnahme – alles sauber dokumentiert. <br>Für Hamburg & Schleswig-Holstein (PLZ 200–204, 222, 224–228, 245, 253–255).</p>
+  <p>PV, Speicher, Wärmepumpe & Wallbox aus einer Hand. Planung, Installation, Abnahme –<br> alles sauber dokumentiert. <br>Für Hamburg & Schleswig-Holstein.</p>
   <a class="btn btn-lg" href="/kontakt/">Kostenfreie Erstberatung</a>
 </section>
 
@@ -28,7 +28,7 @@ description: "Hanseatische Autorität für PV, Speicher, EMS, Wallboxen & Wärme
 
 <section class="region">
   <h2>Regional – von der Elbe bis zur Nordsee</h2>
-  <p>Wir arbeiten ausschließlich im Norden: Hamburg, Schleswig-Holstein (nördlich der Elbe) & angrenzendes Niedersachsen – PLZ 200–204, 222, 224–228, 245, 253–255.</p>
+  <p>Wir arbeiten ausschließlich im Norden: Hamburg, Schleswig-Holstein (nördlich der Elbe).</p>
 </section>
 
 <section class="products">
@@ -56,13 +56,15 @@ description: "Hanseatische Autorität für PV, Speicher, EMS, Wallboxen & Wärme
     <input type="hidden" name="source" value="homepage-inline">
     <input type="hidden" name="page_url" value="{{ .Permalink }}">
     <input type="hidden" name="timestamp" value="{{ now }}">
-    <label class="checkbox small">
-      <input type="checkbox" name="legal_accept" value="yes" required>
-      Ich akzeptiere <a href="/datenschutz/" target="_blank" rel="noopener">Datenschutz</a> &amp; <a href="/nutzungsbedingungen/" target="_blank" rel="noopener">Nutzungsbedingungen</a>.
+    <label class="checkbox">
+    <input type="checkbox" name="legal_accept" value="yes" required>
+    Ich akzeptiere <a href="/datenschutz/" target="_blank" rel="noopener">Datenschutz</a> &
+    <a href="/nutzungsbedingungen/" target="_blank" rel="noopener">Nutzungsbedingungen</a>.
     </label>
-    <label class="checkbox small">
-      <input type="checkbox" name="partner_share_optin" value="yes">
-      Optional: Anfrage an ausgewählte Fachpartner weitergeben
+
+    <label class="checkbox">
+    <input type="checkbox" name="partner_share_optin" value="yes">
+    Optional: Anfrage an ausgewählte, geprüfte Fachpartner in meiner Region weitergeben (widerruflich).
     </label>
     <div style="position:absolute; left:-5000px;" aria-hidden="true">
       <input type="text" name="website" tabindex="-1" autocomplete="off">

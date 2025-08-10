@@ -111,3 +111,19 @@ label.checkbox { line-height: 1.4; }
   form input, form textarea, form button { max-width: 100%; }
 }
 
+/* Checkbox + Text in einer Zeile */
+label.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+label.checkbox input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--gold);
+}
+
