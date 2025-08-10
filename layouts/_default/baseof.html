@@ -5,15 +5,7 @@
 </head>
 <body class="{{ if .IsHome }}homepage{{ end }}">
   <div class="container">
-    <header>
-      <a href="/" aria-label="Zur Startseite">
-        <img src="{{ "/images/OwnTheSun LOGO FINAL 2000.png" | relURL }}"
-             alt="Own The Sun Logo"
-             class="logo" />
-      </a>
-      <h1 class="headline">30 Jahre freie Energie aus der<br> Sonne für Ihre Unabhängigkeit</h1>
-      <p class="subheadline">Premium-Produkte mit extra langer Garantie & persönlicher Beratung.</p>
-    </header>
+    {{ partial "header.html" . }}
     <main>
       {{ block "main" . }}{{ end }}
     </main>
@@ -21,3 +13,4 @@
   </div>
 </body>
 </html>
+
