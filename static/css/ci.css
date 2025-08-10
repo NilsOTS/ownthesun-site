@@ -127,3 +127,55 @@ label.checkbox input[type="checkbox"] {
   accent-color: var(--gold);
 }
 
+/* Formular-Layout */
+.lead-form {
+  text-align: center;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.lead-form input[type="text"],
+.lead-form input[type="email"] {
+  display: block;
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.4rem 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Checkbox-Layout */
+label.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+label.checkbox input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  accent-color: #EAB21A; /* Goldfarbe */
+}
+
+/* Button */
+.lead-form button {
+  background-color: #EAB21A;
+  color: #002B49;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.lead-form button:hover {
+  background-color: #d3a218;
+}
