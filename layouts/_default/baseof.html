@@ -5,7 +5,7 @@
   {{ partial "schema.html" . }}
 </head>
 <body class="{{ if .IsHome }}homepage{{ end }}">
-  {{ partial "analytics_body.html" . }} <!-- GTM/gtag noscript-Fallback direkt nach <body> -->
+  {{/* partial "analytics_body.html" . */}} <!-- GTM/gtag noscript-Fallback direkt nach <body> -->
   <div class="container">
     {{ partial "header.html" . }}
     <main>
