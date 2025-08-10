@@ -1,0 +1,71 @@
+:root{
+  --gold:#FCC90D;             /* Solar Gold */
+  --blue:#02476D;             /* Deep Solar Blue */
+  --white:#FFFFFF;
+  --text:#02476D;
+  --border:#c9d7e3;
+}
+
+html{box-sizing:border-box;scroll-behavior:smooth}
+*,*:before,*:after{box-sizing:inherit}
+
+body{
+  margin:0; color:var(--text); background:var(--white);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:18px; line-height:1.6;
+}
+
+/* Typo */
+h1,h2,h3{
+  font-family:"Playfair Display", Georgia, serif;
+  text-transform:uppercase; letter-spacing:.03em; margin:0 0 .5rem; color:var(--blue);
+}
+h1{font-size:clamp(28px,4.2vw,46px)}
+h2{font-size:clamp(22px,3vw,30px)}
+h3{font-size:clamp(18px,2.2vw,22px)}
+p,li{max-width:75ch}
+a{color:var(--blue)}
+
+/* Container */
+.container{max-width:1100px;margin:0 auto;padding:0 16px}
+
+/* Logo */
+.logo{display:block;margin:24px auto;max-width:340px;height:auto}
+
+/* Sections */
+section{padding:2rem 1rem;margin-inline:auto;max-width:1100px}
+
+/* Hero + Zentrierung auf Startseite */
+.hero{text-align:center;padding:4rem 1rem}
+#home .hero, #home h1, #home h2{ text-align:center }
+
+/* Trust */
+.trust ul{list-style:none;padding:0;margin:1rem auto;display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+.trust li{border:1px solid #e6eef4;border-radius:8px;padding:.5rem .75rem}
+
+/* Buttons */
+.btn,.btn-secondary,button{
+  display:inline-block;border-radius:8px;padding:14px 20px;text-decoration:none;font-weight:600;
+  border:2px solid var(--gold);cursor:pointer
+}
+.btn{background:var(--gold);color:var(--blue)}
+.btn:hover{background:transparent;color:var(--blue)}
+.btn-secondary{background:transparent;color:var(--blue)}
+.btn-secondary:hover{background:var(--gold);color:var(--blue)}
+
+/* Forms */
+form input, form textarea, form button{
+  width:100%;max-width:700px;margin:.5rem auto;display:block;padding:.7rem .85rem;border:1px solid var(--border);border-radius:8px
+}
+label.checkbox{display:block;max-width:700px;margin:.5rem auto}
+.small{font-size:.9rem}
+.microcopy{opacity:.8;font-size:.92rem}
+
+/* Inline-Lead Sektion */
+.inline-lead h2{margin-bottom:.5rem}
+
+/* FAQ Teaser */
+.faq-teaser ul{list-style:disc;padding-left:1.25rem}
+
+/* 404 Hilfsklasse (falls genutzt) */
+.not-found, .not-found h1{text-align:center}
