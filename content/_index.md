@@ -5,7 +5,7 @@ description: "Hanseatische Autorität für PV, Speicher, EMS, Wallboxen & Wärme
 
 <section class="hero">
   <h1>Unabhängige Energie – präzise geplant für den Norden</h1>
-  <p>PV, Speicher, Wärmepumpe & Wallbox aus einer Hand. Planung, Installation, Abnahme – alles sauber dokumentiert. <br>Für Hamburg & Schleswig-Holstein (PLZ 200–204, 222, 224–228, 245, 253–255).</p>
+  <p>PV, Speicher, Wärmepumpe & Wallbox aus einer Hand. Planung, Installation, Abnahme – alles sauber dokumentiert. <br>Für Hamburg & Schleswig-Holstein .</p>
   <a class="btn btn-lg" href="/kontakt/">Kostenfreie Erstberatung</a>
 </section>
 
@@ -28,7 +28,7 @@ description: "Hanseatische Autorität für PV, Speicher, EMS, Wallboxen & Wärme
 
 <section class="region">
   <h2>Regional – von der Elbe bis zur Nordsee</h2>
-  <p>Wir arbeiten ausschließlich im Norden: Hamburg, Schleswig-Holstein (nördlich der Elbe) & angrenzendes Niedersachsen – PLZ 200–204, 222, 224–228, 245, 253–255.</p>
+  <p>Wir arbeiten ausschließlich im Norden: Hamburg, Schleswig-Holstein (nördlich der Elbe).</p>
 </section>
 
 <section class="products">
