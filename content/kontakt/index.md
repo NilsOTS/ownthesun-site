@@ -118,3 +118,26 @@ url: "/kontakt/"
     })();
   </script>
 </section>
+<style>
+  .form-wrap{max-width:860px;margin:2rem auto;padding:1.25rem}
+  .ots-form{display:block}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .grid-1{display:grid;grid-template-columns:1fr;gap:12px;margin-top:10px}
+  .field label{display:block;font-weight:600;margin:0 0 6px}
+  .field input,.field textarea{
+    width:100%;padding:12px 14px;border:1px solid #ddd;border-radius:10px;
+    font-size:16px;line-height:1.4;box-sizing:border-box;background:#fff
+  }
+  .field input:focus,.field textarea:focus{outline:none;border-color:#ff9b00;box-shadow:0 0 0 3px rgba(255,155,0,.15)}
+  .opt{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .opt input{width:auto}
+  .cta-button{
+    appearance:none;border:0;border-radius:999px;padding:14px 22px;font-weight:700;
+    background:#ff9b00;color:#0d0d0d;cursor:pointer;display:inline-block;margin-top:8px
+  }
+  .cta-button:hover{filter:brightness(0.95)}
+  .legal-hint{font-size:12px;color:#666;margin:6px 0 0}
+  @media (max-width:760px){.grid-2{grid-template-columns:1fr}}
+  /* Honeypot verstecken */
+  .hp{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+</style>
