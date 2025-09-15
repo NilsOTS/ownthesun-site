@@ -1,60 +1,124 @@
 ---
-title: "Kontakt – Kostenfreie Erstberatung"
-slug: "kontakt"
-description: "Souveräne Beratung für Eigentümer:innen in Hamburg & Schleswig-Holstein – OWN THE SUN."
+title: "Kontakt & kostenfreie Erstberatung"
+description: "Unabhängige Energie mit Own The Sun: PV, Speicher, Wärmepumpe & Wallbox. Kostenfreie Erstberatung – jetzt anfragen."
+h1: "Kostenfreie Erstberatung anfragen"
+layout: "single"
+url: "/kontakt/"
 ---
 
-# Kontakt
+<section class="form-wrap">
+  <p class="lead">Persönliche Beratung für Hamburg & Schleswig-Holstein. Wir melden uns i.d.R. <strong>binnen 24h</strong>.</p>
 
-Wir melden uns in der Regel **innerhalb von 24 Stunden** – telefonisch oder per E-Mail.
+  <form id="ots-contact" class="ots-form" method="post" action="https://automation.ownthesun.de/webhook/lead" novalidate>
+    <!-- Anti-spam -->
+    <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-<form id="lead-form" action="https://automation.ownthesun.de/webhook/lead" method="post" accept-charset="utf-8" autocomplete="on">
-  <label for="name">Ihr Name*</label>
-  <input id="name" name="name" type="text" required>
+    <!-- Metadaten -->
+    <input type="hidden" name="form_version" value="qs-v1">
+    <input type="hidden" name="submitted_at" value="{{ now.Format "2006-01-02T15:04:05Z07:00" }}">
+    <input type="hidden" name="page_url" value="{{ .Permalink }}">
+    <input type="hidden" name="utm_source" value="{{ with .Site.Params.utm_source }}{{ . }}{{ end }}">
+    <input type="hidden" name="utm_campaign" value="{{ with .Site.Params.utm_campaign }}{{ . }}{{ end }}">
+    <input type="hidden" name="utm_medium" value="{{ with .Site.Params.utm_medium }}{{ . }}{{ end }}">
 
-  <label for="email">E-Mail*</label>
-  <input id="email" name="email" type="email" required>
+    <fieldset class="grid-2">
+      <div class="field">
+        <label for="fname">Vorname*</label>
+        <input id="fname" name="first_name" type="text" required inputmode="text" autocomplete="given-name" />
+      </div>
+      <div class="field">
+        <label for="lname">Nachname*</label>
+        <input id="lname" name="last_name" type="text" required inputmode="text" autocomplete="family-name" />
+      </div>
+    </fieldset>
 
-  <label for="phone">Telefon (optional)</label>
-  <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+49 ...">
+    <fieldset class="grid-2">
+      <div class="field">
+        <label for="email">E-Mail*</label>
+        <input id="email" name="email" type="email" required autocomplete="email" />
+      </div>
+      <div class="field">
+        <label for="phone">Telefon*</label>
+        <input id="phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" />
+      </div>
+    </fieldset>
 
-  <label for="zip">PLZ (optional)</label>
-  <input id="zip" name="zip" type="text" inputmode="numeric" pattern="[0-9]{5}" placeholder="z. B. 25469">
+    <fieldset class="grid-2">
+      <div class="field">
+        <label for="zip">PLZ*</label>
+        <input id="zip" name="zip" type="text" required pattern="[0-9]{5}" inputmode="numeric" />
+      </div>
+      <div class="field">
+        <label for="city">Ort*</label>
+        <input id="city" name="city" type="text" required />
+      </div>
+    </fieldset>
 
-  <label for="message">Worum geht es?</label>
-  <textarea id="message" name="message" rows="5" placeholder="Dach, gewünschte Lösung (PV/Speicher/Wärmepumpe/EMS), Zeithorizont"></textarea>
+    <fieldset class="grid-1">
+      <div class="field">
+        <label for="street">Straße & Nr. (optional)</label>
+        <input id="street" name="street" type="text" autocomplete="address-line1" />
+      </div>
+    </fieldset>
 
-  <label class="checkbox">
-    <input type="checkbox" name="legal_accept" value="yes" required>
-    Ich akzeptiere die <a href="/datenschutz/" target="_blank" rel="noopener">Datenschutzerklärung</a> und die
-    <a href="/nutzungsbedingungen/" target="_blank" rel="noopener">Nutzungsbedingungen</a>.
-  </label>
+    <fieldset class="grid-1">
+      <legend>Wofür interessieren Sie sich?*</legend>
+      <label class="opt"><input type="checkbox" name="interest[]" value="pv" required> Photovoltaik</label>
+      <label class="opt"><input type="checkbox" name="interest[]" value="speicher"> Stromspeicher</label>
+      <label class="opt"><input type="checkbox" name="interest[]" value="wp"> Wärmepumpe</label>
+      <label class="opt"><input type="checkbox" name="interest[]" value="wallbox"> Wallbox</label>
+      <label class="opt"><input type="checkbox" name="interest[]" value="ems"> Energiemanagement</label>
+    </fieldset>
 
-  <label class="checkbox">
-    <input type="checkbox" name="partner_share_optin" value="yes">
-    Optional: Anfrage an ausgewählte, geprüfte Fachpartner in meiner Region weitergeben (widerruflich).
-  </label>
+    <fieldset class="grid-1">
+      <div class="field">
+        <label for="message">Kurze Beschreibung (optional)</label>
+        <textarea id="message" name="message" rows="4" placeholder="Dachform, Baujahr, Stromverbrauch, Ziele..."></textarea>
+      </div>
+    </fieldset>
 
-  <div style="position:absolute; left:-5000px;" aria-hidden="true">
-    <label for="website">Bitte freilassen</label>
-    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
-  </div>
+    <fieldset class="grid-1">
+      <label class="opt">
+        <input type="checkbox" name="legal_accept" value="yes" required>
+        Ich akzeptiere die <a href="/datenschutz/" target="_blank" rel="noopener">Datenschutzbestimmungen</a> und
+        <a href="/nutzungsbedingungen/" target="_blank" rel="noopener">Nutzungsbedingungen</a>.*
+      </label>
+      <label class="opt">
+        <input type="checkbox" name="partner_share_optin" value="yes">
+        Optional: Ich erlaube die Weitergabe meiner Anfrage an ausgewählte, geprüfte Fachpartner in meiner Region (widerruflich).
+      </label>
+      <label class="opt">
+        <input type="checkbox" name="consent_marketing" value="yes">
+        Optional: Ich möchte Updates & Angebote per E-Mail erhalten (widerruflich).
+      </label>
+    </fieldset>
 
-  <input type="hidden" name="page_url" value="{{ .Permalink }}">
-  <input type="hidden" name="source" value="kontakt">
-  <input type="hidden" name="timestamp" value="{{ now }}">
+    <div class="actions">
+      <button type="submit" class="cta-button">Kostenfreie Erstberatung anfragen</button>
+      <p class="legal-hint">*Pflichtfelder</p>
+    </div>
+  </form>
+</section>
 
-  <button type="submit" class="btn btn-lg">Kostenfreie Erstberatung anfragen</button>
-</form>
-
-<p class="microcopy">Zielgebiet: PLZ 200–204, 222, 224–228, 245, 253–255. Keine Vorkasse. Faire, transparente Angebote.</p>
 
 <script>
-  window.dataLayer = window.dataLayer || [];
-  document.getElementById('lead-form')?.addEventListener('submit', function(){
-    window.dataLayer.push({
-      event:'lead_submit', form_location:'kontakt',
-      consent_partner_share: !!document.querySelector('input[name="partner_share_optin"]:checked')
+  (function(){
+    const f = document.getElementById('ots-contact');
+    const status = document.getElementById('form-status');
+    f.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.textContent = "Sende...";
+      const data = new FormData(f);
+      try {
+        const res = await fetch(f.action, { method:'POST', body: data, headers: { 'Accept':'application/json' } });
+        if (res.ok) {
+          window.location.href = "/kontakt/thank-you/";
+        } else {
+          status.textContent = "Fehler beim Senden. Bitte erneut versuchen.";
+        }
+      } catch(err) {
+        status.textContent = "Netzwerkfehler. Bitte später erneut versuchen.";
+      }
     });
-  });
+  })();
 </script>

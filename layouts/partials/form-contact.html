@@ -1,0 +1,32 @@
+<form action="https://automation.ownthesun.de/webhook/lead_ingest" method="POST" accept-charset="utf-8">
+  <input type="hidden" name="source" value="ownthesun.de">
+  <input type="hidden" name="page_url" value="{{ .Permalink }}">
+  <input type="hidden" name="referrer" value="{{ .Site.BaseURL }}">
+  <!-- Honeypot (unsichtbar) -->
+  <div style="position:absolute;left:-5000px;" aria-hidden="true">
+    <label>Firma (leer lassen)</label>
+    <input type="text" name="company">
+  </div>
+
+  <div class="grid">
+    <label>Vorname* <input name="firstname" required></label>
+    <label>Nachname* <input name="lastname" required></label>
+    <label>E-Mail* <input type="email" name="email" required></label>
+    <label>Telefon <input type="tel" name="phone"></label>
+    <label>PLZ* <input name="zip" pattern="[0-9]{5}" required></label>
+    <label>Jahresverbrauch (kWh) <input name="annual_kwh" inputmode="numeric"></label>
+    <label>Nachricht <textarea name="message" rows="3"></textarea></label>
+  </div>
+
+  <!-- Einwilligungen -->
+  <label style="display:block;margin-top:8px;">
+    <input type="checkbox" name="consent_privacy" required>
+    Ich habe die <a href="/datenschutz/" target="_blank">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung zu.
+  </label>
+  <label style="display:block;">
+    <input type="checkbox" name="consent_marketing">
+    Ja, ich möchte per E-Mail/Telefon zu PV-Lösungen informiert werden (optional).
+  </label>
+
+  <button type="submit">Kostenlose Beratung anfragen</button>
+</form>
