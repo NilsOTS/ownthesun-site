@@ -7,57 +7,60 @@ url: "/kontakt/"
 ---
 
 <section class="form-wrap">
-  <p class="lead">Persönliche Beratung für Hamburg & Schleswig-Holstein. Wir melden uns i.d.R. <strong>binnen 24h</strong>.</p>
+  <p class="lead">
+    Persönliche Beratung für Hamburg & Schleswig-Holstein. Wir melden uns i.d.R. <strong>binnen 24h</strong>.
+  </p>
 
+  <!-- Formular -->
   <form id="ots-contact" class="ots-form" method="post" action="https://automation.ownthesun.de/webhook/lead" novalidate>
-    <!-- Anti-spam -->
+    <!-- Anti-Spam (Honeypot: muss leer bleiben) -->
     <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
     <!-- Metadaten -->
     <input type="hidden" name="form_version" value="qs-v1">
-    <input type="hidden" name="submitted_at" value="{{ now.Format "2006-01-02T15:04:05Z07:00" }}">
-    <input type="hidden" name="page_url" value="{{ .Permalink }}">
-    <input type="hidden" name="utm_source" value="{{ with .Site.Params.utm_source }}{{ . }}{{ end }}">
-    <input type="hidden" name="utm_campaign" value="{{ with .Site.Params.utm_campaign }}{{ . }}{{ end }}">
-    <input type="hidden" name="utm_medium" value="{{ with .Site.Params.utm_medium }}{{ . }}{{ end }}">
+    <input type="hidden" name="submitted_at" value="">
+    <input type="hidden" name="page_url" value="">
+    <input type="hidden" name="utm_source" value="">
+    <input type="hidden" name="utm_campaign" value="">
+    <input type="hidden" name="utm_medium" value="">
 
     <fieldset class="grid-2">
       <div class="field">
         <label for="fname">Vorname*</label>
-        <input id="fname" name="first_name" type="text" required inputmode="text" autocomplete="given-name" />
+        <input id="fname" name="first_name" type="text" required inputmode="text" autocomplete="given-name">
       </div>
       <div class="field">
         <label for="lname">Nachname*</label>
-        <input id="lname" name="last_name" type="text" required inputmode="text" autocomplete="family-name" />
+        <input id="lname" name="last_name" type="text" required inputmode="text" autocomplete="family-name">
       </div>
     </fieldset>
 
     <fieldset class="grid-2">
       <div class="field">
         <label for="email">E-Mail*</label>
-        <input id="email" name="email" type="email" required autocomplete="email" />
+        <input id="email" name="email" type="email" required autocomplete="email">
       </div>
       <div class="field">
         <label for="phone">Telefon*</label>
-        <input id="phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel" />
+        <input id="phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel">
       </div>
     </fieldset>
 
     <fieldset class="grid-2">
       <div class="field">
         <label for="zip">PLZ*</label>
-        <input id="zip" name="zip" type="text" required pattern="[0-9]{5}" inputmode="numeric" />
+        <input id="zip" name="zip" type="text" required pattern="[0-9]{5}" inputmode="numeric">
       </div>
       <div class="field">
         <label for="city">Ort*</label>
-        <input id="city" name="city" type="text" required />
+        <input id="city" name="city" type="text" required>
       </div>
     </fieldset>
 
     <fieldset class="grid-1">
       <div class="field">
         <label for="street">Straße & Nr. (optional)</label>
-        <input id="street" name="street" type="text" autocomplete="address-line1" />
+        <input id="street" name="street" type="text" autocomplete="address-line1">
       </div>
     </fieldset>
 
@@ -100,25 +103,15 @@ url: "/kontakt/"
   </form>
 </section>
 
-
+<!-- Hidden-Felder befüllen (stört den 302-Redirect nicht) -->
 <script>
-  (function(){
-    const f = document.getElementById('ots-contact');
-    const status = document.getElementById('form-status');
-    f.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      status.textContent = "Sende...";
-      const data = new FormData(f);
-      try {
-        const res = await fetch(f.action, { method:'POST', body: data, headers: { 'Accept':'application/json' } });
-        if (res.ok) {
-          window.location.href = "/kontakt/thank-you/";
-        } else {
-          status.textContent = "Fehler beim Senden. Bitte erneut versuchen.";
-        }
-      } catch(err) {
-        status.textContent = "Netzwerkfehler. Bitte später erneut versuchen.";
-      }
-    });
+  (function () {
+    var qs = new URLSearchParams(location.search);
+    function set(name, val){ var el = document.querySelector('input[name="'+name+'"]'); if (el) el.value = val || ""; }
+    set("page_url", location.href);
+    set("submitted_at", new Date().toISOString());
+    set("utm_source", qs.get("utm_source"));
+    set("utm_medium", qs.get("utm_medium"));
+    set("utm_campaign", qs.get("utm_campaign"));
   })();
 </script>
