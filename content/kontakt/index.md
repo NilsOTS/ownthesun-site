@@ -11,8 +11,9 @@ url: "/kontakt/"
     Persönliche Beratung für Hamburg & Schleswig-Holstein. Wir melden uns i.d.R. <strong>binnen 24h</strong>.
   </p>
 
-  <!-- Formular -->
+  <!-- Formular-Start (WICHTIG) -->
   <form id="ots-contact" class="ots-form" method="post" action="https://automation.ownthesun.de/webhook/lead" novalidate>
+
     <!-- Anti-Spam (Honeypot: muss leer bleiben) -->
     <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
@@ -100,18 +101,20 @@ url: "/kontakt/"
       <button type="submit" class="cta-button">Kostenfreie Erstberatung anfragen</button>
       <p class="legal-hint">*Pflichtfelder</p>
     </div>
-  </form>
-</section>
 
-<!-- Hidden-Felder befüllen (stört den 302-Redirect nicht) -->
-<script>
-  (function () {
-    var qs = new URLSearchParams(location.search);
-    function set(name, val){ var el = document.querySelector('input[name="'+name+'"]'); if (el) el.value = val || ""; }
-    set("page_url", location.href);
-    set("submitted_at", new Date().toISOString());
-    set("utm_source", qs.get("utm_source"));
-    set("utm_medium", qs.get("utm_medium"));
-    set("utm_campaign", qs.get("utm_campaign"));
-  })();
-</script>
+  </form>
+  <!-- Formular-Ende -->
+
+  <!-- Hidden-Felder per JS befüllen; blockiert den 302 nicht -->
+  <script>
+    (function () {
+      var qs = new URLSearchParams(location.search);
+      function set(name, val){ var el = document.querySelector('input[name="'+name+'"]'); if (el) el.value = val || ""; }
+      set("page_url", location.href);
+      set("submitted_at", new Date().toISOString());
+      set("utm_source", qs.get("utm_source"));
+      set("utm_medium", qs.get("utm_medium"));
+      set("utm_campaign", qs.get("utm_campaign"));
+    })();
+  </script>
+</section>
