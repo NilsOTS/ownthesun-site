@@ -1,46 +1,59 @@
 <section class="form-wrap">
-  <style>
-    /* --- Styling nur für die Kontakt-Seite --- */
-    .form-wrap{max-width:780px;margin:0 auto}
-    .form-wrap .lead{margin:8px 0 16px;color:#0f172a;font-size:15px}
-    .ots-form{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px 22px}
-    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:16px}
-    .grid-1{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:16px}
-    .field label{display:block;margin:0 0 6px;font-weight:600;color:#0f172a;font-size:14px}
-    .field input,.field textarea{
-      width:100%;padding:12px 14px;border:1px solid #cbd5e1;border-radius:8px;
-      font-size:16px;line-height:1.3;background:#fff;color:#0f172a
-    }
-    .field textarea{min-height:110px;resize:vertical}
-    .hp{display:none!important}
-    legend{font-weight:700;margin:4px 0 8px;color:#0f172a}
+<style>
+  /* --- Styling nur für die Kontakt-Seite --- */
+  .form-wrap{max-width:780px;margin:0 auto}
+  .form-wrap .lead{margin:8px 0 16px;color:#0f172a;font-size:15px}
 
-    /* Interessen sauber im Raster (2 Spalten) */
-    .interests .opt-group{
-      display:grid;grid-template-columns:repeat(2, minmax(220px,1fr));
-      column-gap:16px;row-gap:8px
-    }
-    /* Einwilligungen untereinander */
-    .consents{
-      display:grid;grid-template-columns:1fr;row-gap:10px
-    }
-    /* Checkbox + Text bündig */
-    label.opt{display:flex;align-items:flex-start;gap:8px;margin:0;line-height:1.35}
-    label.opt input[type="checkbox"]{margin-top:2px;flex:0 0 auto}
+  .ots-form{
+    background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px 22px;
+    overflow:hidden; /* verhindert optisches Überlaufen */
+  }
+  .ots-form *{box-sizing:border-box}
 
-    .actions{margin-top:8px;text-align:center}
-    .cta-button{
-      background:#0D0D0D;color:#fff;border:0;border-radius:10px;padding:12px 18px;
-      font-weight:700;cursor:pointer
-    }
-    .cta-button:hover{opacity:.92}
-    .legal-hint{font-size:12px;color:#64748b;margin-top:8px}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:16px}
+  .grid-1{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:16px}
 
-    @media (max-width:640px){
-      .grid-2{grid-template-columns:1fr}
-      .interests .opt-group{grid-template-columns:1fr}
-    }
-  </style>
+  .field label{display:block;margin:0 0 6px;font-weight:600;color:#0f172a;font-size:14px}
+  .field input,.field textarea{
+    width:100%;padding:12px 14px;border:1px solid #cbd5e1;border-radius:8px;
+    font-size:16px;line-height:1.3;background:#fff;color:#0f172a
+  }
+  .field textarea{min-height:110px;resize:vertical}
+
+  .hp{display:none!important}
+  legend{font-weight:700;margin:4px 0 8px;color:#0f172a}
+
+  /* Interessen: 2 Spalten, ohne Mindestbreite -> bleibt in der Box */
+  .interests .opt-group{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    column-gap:12px;row-gap:8px
+  }
+
+  /* Einwilligungen untereinander; Zeilen dürfen umbrechen */
+  .consents{display:grid;grid-template-columns:1fr;row-gap:10px}
+
+  /* Checkbox + Text bündig, mehrzeilig erlaubt */
+  label.opt{
+    display:flex;align-items:flex-start;gap:8px;margin:0;line-height:1.35;
+    flex-wrap:wrap; /* <— WICHTIG: Text bricht statt rauszuschieben */
+    word-break:break-word;white-space:normal;
+  }
+  label.opt input[type="checkbox"]{margin-top:2px;flex:0 0 auto}
+
+  .actions{margin-top:8px;text-align:center}
+  .cta-button{
+    background:#0D0D0D;color:#fff;border:0;border-radius:10px;padding:12px 18px;
+    font-weight:700;cursor:pointer
+  }
+  .cta-button:hover{opacity:.92}
+  .legal-hint{font-size:12px;color:#64748b;margin-top:8px}
+
+  @media (max-width:640px){
+    .grid-2{grid-template-columns:1fr}
+    .interests .opt-group{grid-template-columns:1fr}
+  }
+</style>
 
   <p class="lead">
     Persönliche Beratung für Hamburg & Schleswig-Holstein. Wir melden uns i.d.R. <strong>binnen 24h</strong>.
