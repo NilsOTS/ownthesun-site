@@ -46,12 +46,8 @@ description: "Autorität für PV, Speicher, EMS, Wallboxen & Wärmepumpen – au
   <h3>Energiemanagement (EMS) & Wallbox</h3>
   <p>Erzeugung, Speicher und Verbraucher intelligent steuern – transparent per App, bereit für dynamische Tarife.</p>
 </section>
-
-<section class="inline-lead" aria-label="Schnellanfrage">
-  <h2>Kurz anfragen & starten</h2>
-  {{< leadform >}}
+ <a class="btn btn-lg" href="/kontakt/">Kostenfreie Erstberatung</a>
 </section>
-
 <section class="faq-teaser">
   <h2>Häufige Fragen</h2>
   <ul>
