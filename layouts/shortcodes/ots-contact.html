@@ -59,34 +59,15 @@
       </div>
     </fieldset>
 
-    <!-- Interessen: linksbündig, vertikal, 3ch Abstand -->
+    <!-- Interessen -->
     <fieldset class="choices" aria-labelledby="interest-legend">
       <legend id="interest-legend">Wofür interessieren Sie sich?*</legend>
 
-      <label class="opt">
-        <input type="checkbox" name="interest[]" value="pv" required>
-        <span>Photovoltaik</span>
-      </label>
-
-      <label class="opt">
-        <input type="checkbox" name="interest[]" value="speicher">
-        <span>Stromspeicher</span>
-      </label>
-
-      <label class="opt">
-        <input type="checkbox" name="interest[]" value="wp">
-        <span>Wärmepumpe</span>
-      </label>
-
-      <label class="opt">
-        <input type="checkbox" name="interest[]" value="wallbox">
-        <span>Wallbox</span>
-      </label>
-
-      <label class="opt">
-        <input type="checkbox" name="interest[]" value="ems">
-        <span>Energiemanagement</span>
-      </label>
+      <label class="opt"><input type="checkbox" name="interest[]" value="pv" required><span>Photovoltaik</span></label>
+      <label class="opt"><input type="checkbox" name="interest[]" value="speicher"><span>Stromspeicher</span></label>
+      <label class="opt"><input type="checkbox" name="interest[]" value="wp"><span>Wärmepumpe</span></label>
+      <label class="opt"><input type="checkbox" name="interest[]" value="wallbox"><span>Wallbox</span></label>
+      <label class="opt"><input type="checkbox" name="interest[]" value="ems"><span>Energiemanagement</span></label>
     </fieldset>
 
     <!-- Nachricht -->
@@ -97,7 +78,7 @@
       </div>
     </fieldset>
 
-    <!-- Einwilligungen: linksbündig, vertikal, 3ch Abstand -->
+    <!-- Einwilligungen -->
     <fieldset class="choices">
       <label class="opt">
         <input type="checkbox" name="legal_accept" value="yes" required>
@@ -123,6 +104,12 @@
         </span>
       </label>
     </fieldset>
+<!-- Rechtlicher Hinweis -->
+<p class="legal-note" role="note">
+  <strong>Hinweis:</strong> Ihre Anfrage zu Photovoltaik- und Speicherlösungen wird im Rahmen meiner Tätigkeit als
+  selbstständiger Handelsvertreter (§§ 84 ff. HGB) an die Energiekonzepte Deutschland GmbH (EKD-Solar) weitergeleitet.
+  Vertragspartner für Photovoltaik- und Speicherlösungen ist ausschließlich EKD-Solar.
+</p>
 
     <div class="actions" style="text-align:center;">
       <button type="submit" class="cta-button">Kostenfreie Erstberatung absenden</button>
@@ -133,9 +120,41 @@
   <div id="form-status" class="form-status" aria-live="polite"></div>
 </section>
 
-<!-- Nur dieses CSS ist neu/entscheidend für die Linksbündigkeit & den 3-Space-Abstand -->
+<!-- STYLES: Label links / Feld rechts + Checkbox-Blöcke + Honeypot verstecken -->
 <style>
-  /* Box-Optik und Textausrichtung */
+  /* Honeypot zuverlässig verstecken */
+  .ots-form .hp{ display:none !important; }
+
+  /* Zwei Spalten anlegen */
+  .ots-form fieldset.grid-2{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:14px;
+    margin:12px 0;
+  }
+  .ots-form fieldset.grid-1{ margin:12px 0; }
+
+  /* Label LINKS, Input RECHTS – auf einer Höhe */
+  .ots-form .field{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    width:100%;
+  }
+  .ots-form .field label{
+    flex:0 0 140px;     /* feste Labelbreite */
+    margin:0;
+    text-align:left;
+    white-space:nowrap;
+  }
+  .ots-form .field input,
+  .ots-form .field textarea,
+  .ots-form .field select{
+    flex:1 1 auto;      /* Feld nimmt restliche Breite */
+    width:100%;
+  }
+
+  /* Checkbox-Gruppen (Interessen / Einwilligungen) */
   .ots-form fieldset.choices{
     border:1px solid var(--border, #d9e2ea);
     padding:14px 16px;
@@ -146,23 +165,24 @@
     font-weight:600;
     margin:0 0 8px 0;
   }
-
-  /* EINHEITLICHE Ausrichtung für Checkbox + Text */
   .ots-form .choices label.opt{
     display:flex;
-    align-items:center;        /* Text und Kästchen auf gleicher Höhe */
-    gap:3ch;                   /* ≈ „3 Leerzeichen“-Breite */
+    align-items:center;
+    gap:3ch;            /* ≈ “3 Leerzeichen” Abstand */
     line-height:1.4;
-    float:none;                /* Theme-Floats sicher aushebeln */
-    width:auto;                /* volle Breite vom Inhalt */
   }
-  .ots-form .choices label.opt + label.opt{
-    margin-top:8px;            /* Abstand zwischen den Zeilen */
-  }
+  .ots-form .choices label.opt + label.opt{ margin-top:8px; }
   .ots-form .choices input[type="checkbox"]{
     inline-size:18px;
     block-size:18px;
-    margin:0;                  /* kein zusätzlicher Versatz */
+    margin:0;
+  }
+
+  /* Mobile: Labels oberhalb der Felder, damit es nicht quetscht */
+  @media (max-width: 640px){
+    .ots-form fieldset.grid-2{ grid-template-columns: 1fr; }
+    .ots-form .field{ flex-direction:column; align-items:flex-start; }
+    .ots-form .field label{ flex:none; }
   }
 </style>
 
