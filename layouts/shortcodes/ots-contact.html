@@ -4,11 +4,10 @@
   </p>
 
   <form id="ots-contact" class="ots-form" method="post" action="https://automation.ownthesun.de/webhook/lead" novalidate>
-
-    <!-- Honeypot (unsichtbar → verhindert "Feld über dem Kasten") -->
+    <!-- Honeypot (unsichtbar) -->
     <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-    <!-- Metadaten (werden per JS befüllt) -->
+    <!-- Metadaten (per JS befüllt) -->
     <input type="hidden" name="form_version" value="qs-v1">
     <input type="hidden" name="submitted_at" value="">
     <input type="hidden" name="page_url" value="">
@@ -59,10 +58,10 @@
       </div>
     </fieldset>
 
-    <!-- Interessen -->
+    <!-- Interessen (einspaltig, perfekt bündig) -->
     <fieldset class="grid-1">
       <legend>Wofür interessieren Sie sich?*</legend>
-      <div class="interest-grid">
+      <div class="checklist">
         <label class="opt"><input type="checkbox" name="interest[]" value="pv" required> Photovoltaik</label>
         <label class="opt"><input type="checkbox" name="interest[]" value="speicher"> Stromspeicher</label>
         <label class="opt"><input type="checkbox" name="interest[]" value="wp"> Wärmepumpe</label>
@@ -79,7 +78,7 @@
       </div>
     </fieldset>
 
-    <!-- Einwilligungen -->
+    <!-- Einwilligungen (einspaltig, Checkbox obenbündig) -->
     <fieldset class="grid-1 consents">
       <label class="opt">
         <input type="checkbox" name="legal_accept" value="yes" required>
@@ -111,30 +110,31 @@
   .lead{margin:0 0 12px 0}
   .ots-form{display:grid;gap:14px}
 
-  /* die Feld-Reihen: Label und Input sauber nebeneinander */
+  /* Reihen: Label | Feld */
   .row{display:grid;grid-template-columns:160px 1fr;column-gap:12px;align-items:center}
   .row label{margin:0;white-space:nowrap}
-  .row input,.row select,.row textarea{width:100%;box-sizing:border-box}
+  .row input,.row textarea{width:100%;box-sizing:border-box}
 
-  /* 2-Spalten-Gruppen (Name, Kontakt, PLZ/Ort) */
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .grid-1{display:block}
 
-  /* Interessen & Einwilligungen – Checkbox links, Text bündig */
-  .interest-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px}
-  .opt{display:flex;align-items:center;gap:8px;line-height:1.35;margin:4px 0}
-  .opt input{margin:0}
+  /* Interessen – strikt EINSPALTIG, je Zeile eine Checkbox + Text */
+  .checklist{display:flex;flex-direction:column;gap:8px}
+  .opt{display:flex;align-items:flex-start;gap:10px;line-height:1.35;margin:4px 0}
+  .opt input{margin:0;margin-top:3px}
 
-  /* Textarea-Reihe: Label oben, Feld groß – trotzdem bündig mit anderen */
+  /* Einwilligungen: ebenfalls einspaltig */
+  .consents{display:flex;flex-direction:column;gap:10px}
+
+  /* Textarea-Reihe */
   .row-textarea{align-items:start}
   .row-textarea label{padding-top:6px}
   .row textarea{min-height:110px;resize:vertical}
 
   /* Button */
-  .actions{margin-top:6px;text-align:center}
-  .cta-button{cursor:pointer}
+  .actions{text-align:center;margin-top:6px}
 
-  /* Honeypot verstecken (war der „Ausreißer“ über dem Kasten) */
+  /* Honeypot unsichtbar */
   .hp{position:absolute !important;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
 </style>
 
