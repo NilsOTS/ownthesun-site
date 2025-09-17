@@ -1,7 +1,6 @@
 <section class="form-wrap">
-  <!-- Kopftext -->
-    <p class="minihead">
-    Persönliche, professionelle Beratung für Hamburg & Schleswig-Holstein.<br>
+  <p class="lead" style="text-align:center;">
+    Persönliche, professionelle Beratung für Hamburg &amp; Schleswig-Holstein.<br>
     <strong>Wir melden uns i.d.R. binnen 24h.</strong>
   </p>
 
@@ -9,7 +8,7 @@
     <!-- Anti-Spam (Honeypot: muss leer bleiben) -->
     <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-    <!-- Metadaten (werden per JS gesetzt) -->
+    <!-- Metadaten (werden per JS befüllt) -->
     <input type="hidden" name="form_version" value="qs-v1">
     <input type="hidden" name="submitted_at" value="">
     <input type="hidden" name="page_url" value="">
@@ -17,7 +16,7 @@
     <input type="hidden" name="utm_campaign" value="">
     <input type="hidden" name="utm_medium" value="">
 
-    <!-- Namen -->
+    <!-- Name -->
     <fieldset class="grid-2">
       <div class="field">
         <label for="fname">Vorname*</label>
@@ -41,10 +40,10 @@
       </div>
     </fieldset>
 
-    <!-- Adresse: Straße vor PLZ/Ort und Pflichtfeld -->
+    <!-- Adresse: Straße vor PLZ/Ort -->
     <fieldset class="grid-1">
       <div class="field">
-        <label for="street">Straße & Nr.*</label>
+        <label for="street">Straße &amp; Nr.*</label>
         <input id="street" name="street" type="text" required autocomplete="address-line1">
       </div>
     </fieldset>
@@ -60,118 +59,141 @@
       </div>
     </fieldset>
 
-    <!-- Interessen -->
-    <fieldset class="grid-1">
-      <legend>Wofür interessieren Sie sich?*</legend>
-      <div class="checklist">
-        <div class="opt"><input id="int-pv"       type="checkbox" name="interest[]" value="pv"       required><label for="int-pv">Photovoltaik</label></div>
-        <div class="opt"><input id="int-speicher" type="checkbox" name="interest[]" value="speicher"><label for="int-speicher">Stromspeicher</label></div>
-        <div class="opt"><input id="int-wp"       type="checkbox" name="interest[]" value="wp"><label for="int-wp">Wärmepumpe</label></div>
-        <div class="opt"><input id="int-wallbox"  type="checkbox" name="interest[]" value="wallbox"><label for="int-wallbox">Wallbox</label></div>
-        <div class="opt"><input id="int-ems"      type="checkbox" name="interest[]" value="ems"><label for="int-ems">Energiemanagement</label></div>
-      </div>
+    <!-- Interessen: linksbündig, vertikal, 3ch Abstand -->
+    <fieldset class="choices" aria-labelledby="interest-legend">
+      <legend id="interest-legend">Wofür interessieren Sie sich?*</legend>
+
+      <label class="opt">
+        <input type="checkbox" name="interest[]" value="pv" required>
+        <span>Photovoltaik</span>
+      </label>
+
+      <label class="opt">
+        <input type="checkbox" name="interest[]" value="speicher">
+        <span>Stromspeicher</span>
+      </label>
+
+      <label class="opt">
+        <input type="checkbox" name="interest[]" value="wp">
+        <span>Wärmepumpe</span>
+      </label>
+
+      <label class="opt">
+        <input type="checkbox" name="interest[]" value="wallbox">
+        <span>Wallbox</span>
+      </label>
+
+      <label class="opt">
+        <input type="checkbox" name="interest[]" value="ems">
+        <span>Energiemanagement</span>
+      </label>
     </fieldset>
 
     <!-- Nachricht -->
     <fieldset class="grid-1">
       <div class="field">
         <label for="message">Kurze Beschreibung (optional)</label>
-        <textarea id="message" name="message" rows="4" placeholder="Dachform, Baujahr, Stromverbrauch, Ziele…"></textarea>
+        <textarea id="message" name="message" rows="4" placeholder="Dachform, Baujahr, Stromverbrauch, Ziele..."></textarea>
       </div>
     </fieldset>
 
-    <!-- Einwilligungen -->
-    <fieldset class="grid-1 consents">
-      <div class="opt">
-        <input id="c-legal" type="checkbox" name="legal_accept" value="yes" required>
-        <label for="c-legal">Ich akzeptiere die <a href="/datenschutz/" target="_blank" rel="noopener">Datenschutzbestimmungen</a> und
-        <a href="/nutzungsbedingungen/" target="_blank" rel="noopener">Nutzungsbedingungen</a>.*</label>
-      </div>
+    <!-- Einwilligungen: linksbündig, vertikal, 3ch Abstand -->
+    <fieldset class="choices">
+      <label class="opt">
+        <input type="checkbox" name="legal_accept" value="yes" required>
+        <span>
+          Ich akzeptiere die
+          <a href="/datenschutz/" target="_blank" rel="noopener">Datenschutzbestimmungen</a>
+          und
+          <a href="/nutzungsbedingungen/" target="_blank" rel="noopener">Nutzungsbedingungen</a>.*
+        </span>
+      </label>
 
-      <div class="opt">
-        <input id="c-partner" type="checkbox" name="partner_share_optin" value="yes">
-        <label for="c-partner">Optional: Ich erlaube die Weitergabe meiner Anfrage an ausgewählte, geprüfte Fachpartner in meiner Region (widerruflich).</label>
-      </div>
+      <label class="opt">
+        <input type="checkbox" name="partner_share_optin" value="yes">
+        <span>
+          Optional: Ich erlaube die Weitergabe meiner Anfrage an ausgewählte, geprüfte Fachpartner in meiner Region (widerruflich).
+        </span>
+      </label>
 
-      <div class="opt">
-        <input id="c-marketing" type="checkbox" name="consent_marketing" value="yes">
-        <label for="c-marketing">Optional: Ich möchte Updates & Angebote per E-Mail erhalten (widerruflich).</label>
-      </div>
+      <label class="opt">
+        <input type="checkbox" name="consent_marketing" value="yes">
+        <span>
+          Optional: Ich möchte Updates &amp; Angebote per E-Mail erhalten (widerruflich).
+        </span>
+      </label>
     </fieldset>
 
-    <div class="actions">
+    <div class="actions" style="text-align:center;">
       <button type="submit" class="cta-button">Kostenfreie Erstberatung absenden</button>
       <p class="legal-hint">*Pflichtfelder</p>
     </div>
   </form>
 
   <div id="form-status" class="form-status" aria-live="polite"></div>
-
-  <!-- Styles nur für dieses Formular -->
-  <style>
-    .form-wrap { max-width: 740px; margin: 0 auto; }
-    .minihead { text-align:center; margin:8px 0 4px; }
-    .hp { display:none !important; }
-
-    /* Grid für Felder */
-    .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
-    .grid-1 { display:block; }
-    .field { display:flex; flex-direction:column; gap:6px; }
-    .field label { font-size:.92rem; color:#0a2942; }
-    .field input, .field textarea { width:100%; padding:.6rem .7rem; border:1px solid #cfd8df; border-radius:4px; }
-
-    /* Checklisten/Einwilligungen – Checkbox links, Text direkt daneben */
-    .checklist, .consents { display:flex; flex-direction:column; gap:8px; margin-top:6px; }
-    .opt { display:flex !important; align-items:flex-start !important; gap:12px; }
-    .opt input { appearance:auto; position:static !important; margin-top:3px !important; }
-    .opt label { all:unset; display:block; flex:1 1 auto; line-height:1.35; color:inherit; cursor:pointer; }
-    .opt label a { text-decoration:underline; }
-
-    .actions { text-align:center; margin-top:10px; }
-    .cta-button { padding:.75rem 1.25rem; border:1px solid #0a2942; background:#0a2942; color:#fff; border-radius:6px; }
-    .cta-button:hover { filter:brightness(.95); }
-    .legal-hint { font-size:.85rem; color:#6b7c8a; }
-
-    @media (max-width: 760px) {
-      .grid-2 { grid-template-columns: 1fr; }
-    }
-  </style>
-
-  <!-- Logik: Metadaten setzen & senden -->
-  <script>
-  (function () {
-    const f = document.getElementById('ots-contact');
-    const status = document.getElementById('form-status');
-
-    // Metadaten
-    f.querySelector('[name="submitted_at"]').value = new Date().toISOString();
-    f.querySelector('[name="page_url"]').value = window.location.href;
-    const usp = new URLSearchParams(window.location.search);
-    ['utm_source','utm_campaign','utm_medium'].forEach(k=>{
-      const v = usp.get(k);
-      if (v) f.querySelector(`[name="${k}"]`).value = v;
-    });
-
-    f.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      status.textContent = "Sende…";
-      const data = new FormData(f);
-      try {
-        const res = await fetch(f.action, { method:'POST', body: data, headers:{'Accept':'application/json'} });
-        if (res.ok) {
-          // Erfolgs-Redirect (falls n8n 302 setzt, folgen wir Location; sonst feste Danke-Seite)
-          if (res.redirected) {
-            window.location.href = res.url;
-          } else {
-            window.location.href = "/danke/";
-          }
-        } else {
-          status.textContent = "Fehler beim Senden. Bitte erneut versuchen.";
-        }
-      } catch(err) {
-        status.textContent = "Netzwerkfehler. Bitte später erneut versuchen.";
-      }
-    });
-  })();
-  </script>
 </section>
+
+<!-- Nur dieses CSS ist neu/entscheidend für die Linksbündigkeit & den 3-Space-Abstand -->
+<style>
+  /* Box-Optik und Textausrichtung */
+  .ots-form fieldset.choices{
+    border:1px solid var(--border, #d9e2ea);
+    padding:14px 16px;
+    margin:12px 0;
+    text-align:left;
+  }
+  .ots-form fieldset.choices legend{
+    font-weight:600;
+    margin:0 0 8px 0;
+  }
+
+  /* EINHEITLICHE Ausrichtung für Checkbox + Text */
+  .ots-form .choices label.opt{
+    display:flex;
+    align-items:center;        /* Text und Kästchen auf gleicher Höhe */
+    gap:3ch;                   /* ≈ „3 Leerzeichen“-Breite */
+    line-height:1.4;
+    float:none;                /* Theme-Floats sicher aushebeln */
+    width:auto;                /* volle Breite vom Inhalt */
+  }
+  .ots-form .choices label.opt + label.opt{
+    margin-top:8px;            /* Abstand zwischen den Zeilen */
+  }
+  .ots-form .choices input[type="checkbox"]{
+    inline-size:18px;
+    block-size:18px;
+    margin:0;                  /* kein zusätzlicher Versatz */
+  }
+</style>
+
+<script>
+(function () {
+  const f = document.getElementById('ots-contact');
+  const status = document.getElementById('form-status');
+
+  // Metadaten setzen
+  f.querySelector('[name="submitted_at"]').value = new Date().toISOString();
+  f.querySelector('[name="page_url"]').value = window.location.href;
+  const usp = new URLSearchParams(window.location.search);
+  ['utm_source','utm_campaign','utm_medium'].forEach(k=>{
+    const v = usp.get(k);
+    if (v) f.querySelector(`[name="${k}"]`).value = v;
+  });
+
+  f.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.textContent = "Sende...";
+    const data = new FormData(f);
+    try {
+      const res = await fetch(f.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+      if (res.ok) {
+        window.location.href = "/kontakt/thank-you/";
+      } else {
+        status.textContent = "Fehler beim Senden. Bitte erneut versuchen.";
+      }
+    } catch (err) {
+      status.textContent = "Netzwerkfehler. Bitte später erneut versuchen.";
+    }
+  });
+})();
+</script>
