@@ -1,54 +1,11 @@
 <section class="form-wrap">
-<style>
-  /* ... dein vorhandenes Formular-CSS ... */
-
-  /* Checkbox/Radio global fixen: niemals 100%-Breite */
-  .ots-form input[type="checkbox"],
-  .ots-form input[type="radio"]{
-    width:auto !important;
-    height:auto;
-    display:inline-block;
-    vertical-align:middle;
-    margin:0;
-  }
-
-  /* Einheitliches Label-Layout: Haken links, Text rechts */
-  label.opt{
-    display:flex;               /* <<< Haken + Text nebeneinander */
-    align-items:center;
-    gap:8px;
-    line-height:1.35;
-    white-space:normal;         /* Text darf umbrechen */
-    word-break:break-word;
-    margin:0;
-  }
-
-  /* Interessen: 2 Spalten, bleibt sicher in der Box */
-  .interests .opt-group{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px 16px;
-    align-items:start;
-  }
-
-  /* Einwilligungen: untereinander */
-  .consents{
-    display:grid;
-    grid-template-columns:1fr;
-    row-gap:10px;
-  }
-
-  @media (max-width:640px){
-    .interests .opt-group{ grid-template-columns:1fr; }
-  }
-</style>
-
   <p class="lead">
     Persönliche Beratung für Hamburg & Schleswig-Holstein. Wir melden uns i.d.R. <strong>binnen 24h</strong>.
   </p>
 
   <form id="ots-contact" class="ots-form" method="post" action="https://automation.ownthesun.de/webhook/lead" novalidate>
-    <!-- Anti-Spam (Honeypot: muss leer bleiben) -->
+
+    <!-- Honeypot (unsichtbar → verhindert "Feld über dem Kasten") -->
     <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
     <!-- Metadaten (werden per JS befüllt) -->
@@ -59,83 +16,85 @@
     <input type="hidden" name="utm_campaign" value="">
     <input type="hidden" name="utm_medium" value="">
 
+    <!-- Name -->
     <fieldset class="grid-2">
-      <div class="field">
+      <div class="field row">
         <label for="fname">Vorname*</label>
         <input id="fname" name="first_name" type="text" required inputmode="text" autocomplete="given-name">
       </div>
-      <div class="field">
+      <div class="field row">
         <label for="lname">Nachname*</label>
         <input id="lname" name="last_name" type="text" required inputmode="text" autocomplete="family-name">
       </div>
     </fieldset>
 
+    <!-- Kontakt -->
     <fieldset class="grid-2">
-      <div class="field">
+      <div class="field row">
         <label for="email">E-Mail*</label>
         <input id="email" name="email" type="email" required autocomplete="email">
       </div>
-      <div class="field">
+      <div class="field row">
         <label for="phone">Telefon*</label>
         <input id="phone" name="phone" type="tel" required inputmode="tel" autocomplete="tel">
       </div>
     </fieldset>
 
+    <!-- Adresse -->
     <fieldset class="grid-2">
-      <div class="field">
+      <div class="field row">
         <label for="zip">PLZ*</label>
         <input id="zip" name="zip" type="text" required pattern="[0-9]{5}" inputmode="numeric">
       </div>
-      <div class="field">
+      <div class="field row">
         <label for="city">Ort*</label>
         <input id="city" name="city" type="text" required>
       </div>
     </fieldset>
 
     <fieldset class="grid-1">
-      <div class="field">
+      <div class="field row">
         <label for="street">Straße & Nr. (optional)</label>
         <input id="street" name="street" type="text" autocomplete="address-line1">
       </div>
     </fieldset>
 
-    <!-- Interessen: 2-Spalten-Raster -->
-    <fieldset class="interests">
-  <legend>Wofür interessieren Sie sich?*</legend>
-  <div class="opt-group">
-    <label class="opt"><input type="checkbox" name="interest[]" value="pv" required> <span>Photovoltaik</span></label>
-    <label class="opt"><input type="checkbox" name="interest[]" value="speicher"> <span>Stromspeicher</span></label>
-    <label class="opt"><input type="checkbox" name="interest[]" value="wp"> <span>Wärmepumpe</span></label>
-    <label class="opt"><input type="checkbox" name="interest[]" value="wallbox"> <span>Wallbox</span></label>
-    <label class="opt"><input type="checkbox" name="interest[]" value="ems"> <span>Energiemanagement</span></label>
-  </div>
-</fieldset>
-
+    <!-- Interessen -->
     <fieldset class="grid-1">
-      <div class="field">
-        <label for="message">Kurze Beschreibung (optional)</label>
-        <textarea id="message" name="message" rows="4" placeholder="Dachform, Baujahr, Stromverbrauch, Ziele…"></textarea>
+      <legend>Wofür interessieren Sie sich?*</legend>
+      <div class="interest-grid">
+        <label class="opt"><input type="checkbox" name="interest[]" value="pv" required> Photovoltaik</label>
+        <label class="opt"><input type="checkbox" name="interest[]" value="speicher"> Stromspeicher</label>
+        <label class="opt"><input type="checkbox" name="interest[]" value="wp"> Wärmepumpe</label>
+        <label class="opt"><input type="checkbox" name="interest[]" value="wallbox"> Wallbox</label>
+        <label class="opt"><input type="checkbox" name="interest[]" value="ems"> Energiemanagement</label>
       </div>
     </fieldset>
 
-    <!-- Einwilligungen: untereinander -->
-    <fieldset class="consents">
-  <label class="opt">
-    <input type="checkbox" name="legal_accept" value="yes" required>
-    <span>Ich akzeptiere die <a href="/datenschutz/" target="_blank" rel="noopener">Datenschutzbestimmungen</a> und
-    <a href="/nutzungsbedingungen/" target="_blank" rel="noopener">Nutzungsbedingungen</a>.*</span>
-  </label>
+    <!-- Nachricht -->
+    <fieldset class="grid-1">
+      <div class="field row row-textarea">
+        <label for="message">Kurze Beschreibung (optional)</label>
+        <textarea id="message" name="message" rows="5" placeholder="Dachform, Baujahr, Stromverbrauch, Ziele..."></textarea>
+      </div>
+    </fieldset>
 
-  <label class="opt">
-    <input type="checkbox" name="partner_share_optin" value="yes">
-    <span>Optional: Ich erlaube die Weitergabe meiner Anfrage an ausgewählte, geprüfte Fachpartner in meiner Region (widerruflich).</span>
-  </label>
-
-  <label class="opt">
-    <input type="checkbox" name="consent_marketing" value="yes">
-    <span>Optional: Ich möchte Updates & Angebote per E-Mail erhalten (widerruflich).</span>
-  </label>
-</fieldset>
+    <!-- Einwilligungen -->
+    <fieldset class="grid-1 consents">
+      <label class="opt">
+        <input type="checkbox" name="legal_accept" value="yes" required>
+        Ich akzeptiere die <a href="/datenschutz/" target="_blank" rel="noopener">Datenschutzbestimmungen</a> und
+        <a href="/nutzungsbedingungen/" target="_blank" rel="noopener">Nutzungsbedingungen</a>.*
+      </label>
+      <label class="opt">
+        <input type="checkbox" name="partner_share_optin" value="yes">
+        Optional: Ich erlaube die Weitergabe meiner Anfrage an ausgewählte, geprüfte Fachpartner in meiner Region (widerruflich).
+      </label>
+      <label class="opt">
+        <input type="checkbox" name="consent_marketing" value="yes">
+        Optional: Ich möchte Updates & Angebote per E-Mail erhalten (widerruflich).
+      </label>
+    </fieldset>
 
     <div class="actions">
       <button type="submit" class="cta-button">Kostenfreie Erstberatung anfragen</button>
@@ -146,34 +105,69 @@
   <div id="form-status" class="form-status" aria-live="polite"></div>
 </section>
 
+<style>
+  /* Layout */
+  .form-wrap{max-width:760px;margin:0 auto}
+  .lead{margin:0 0 12px 0}
+  .ots-form{display:grid;gap:14px}
+
+  /* die Feld-Reihen: Label und Input sauber nebeneinander */
+  .row{display:grid;grid-template-columns:160px 1fr;column-gap:12px;align-items:center}
+  .row label{margin:0;white-space:nowrap}
+  .row input,.row select,.row textarea{width:100%;box-sizing:border-box}
+
+  /* 2-Spalten-Gruppen (Name, Kontakt, PLZ/Ort) */
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .grid-1{display:block}
+
+  /* Interessen & Einwilligungen – Checkbox links, Text bündig */
+  .interest-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px}
+  .opt{display:flex;align-items:center;gap:8px;line-height:1.35;margin:4px 0}
+  .opt input{margin:0}
+
+  /* Textarea-Reihe: Label oben, Feld groß – trotzdem bündig mit anderen */
+  .row-textarea{align-items:start}
+  .row-textarea label{padding-top:6px}
+  .row textarea{min-height:110px;resize:vertical}
+
+  /* Button */
+  .actions{margin-top:6px;text-align:center}
+  .cta-button{cursor:pointer}
+
+  /* Honeypot verstecken (war der „Ausreißer“ über dem Kasten) */
+  .hp{position:absolute !important;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+</style>
+
 <script>
-(function () {
-  const f = document.getElementById('ots-contact');
-  const status = document.getElementById('form-status');
+  (function () {
+    const f = document.getElementById('ots-contact');
+    const status = document.getElementById('form-status');
+    if (!f) return;
 
-  // Metadaten setzen
-  f.querySelector('[name="submitted_at"]').value = new Date().toISOString();
-  f.querySelector('[name="page_url"]').value = window.location.href;
-  const usp = new URLSearchParams(window.location.search);
-  ['utm_source','utm_campaign','utm_medium'].forEach(k=>{
-    const v = usp.get(k);
-    if (v) f.querySelector(`[name="${k}"]`).value = v;
-  });
+    // Metadaten setzen
+    f.querySelector('[name="submitted_at"]').value = new Date().toISOString();
+    f.querySelector('[name="page_url"]').value = window.location.href;
+    const usp = new URLSearchParams(window.location.search);
+    ['utm_source','utm_campaign','utm_medium'].forEach(k=>{
+      const v = usp.get(k);
+      if (v) f.querySelector(`[name="${k}"]`).value = v;
+    });
 
-  f.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    status.textContent = "Sende...";
-    const data = new FormData(f);
-    try {
-      const res = await fetch(f.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-      if (res.ok) {
-        window.location.href = "/kontakt/thank-you/";
-      } else {
-        status.textContent = "Fehler beim Senden. Bitte erneut versuchen.";
+    // Senden
+    f.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.textContent = "Sende...";
+      const data = new FormData(f);
+      try {
+        const res = await fetch(f.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+        if (res.ok) {
+          window.location.href = "/kontakt/thank-you/";
+        } else {
+          status.textContent = "Fehler beim Senden. Bitte erneut versuchen.";
+        }
+      } catch (err) {
+        status.textContent = "Netzwerkfehler. Bitte später erneut versuchen.";
       }
-    } catch (err) {
-      status.textContent = "Netzwerkfehler. Bitte später erneut versuchen.";
-    }
-  });
-})();
+    });
+  })();
 </script>
