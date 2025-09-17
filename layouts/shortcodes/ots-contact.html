@@ -1,6 +1,5 @@
 <section class="form-wrap">
-  <p class="sublead">Premium-Produkte mit extra langer Garantie & persönlicher Beratung.</p>
-  <p class="infos">Persönliche Beratung für Hamburg & Schleswig-Holstein.<br>Wir melden uns i.d.R. <strong>binnen 24h</strong>.</p>
+    <p class="infos">Persönliche Beratung für Hamburg & Schleswig-Holstein.<br>Wir melden uns i.d.R. <strong>binnen 24h</strong>.</p>
 
   <form id="ots-contact" class="ots-form" method="post" action="https://automation.ownthesun.de/webhook/lead" novalidate>
     <!-- Honeypot -->
@@ -38,7 +37,7 @@
       </div>
     </fieldset>
 
-    <!-- Straße (jetzt Pflicht & über PLZ/Ort) -->
+    <!-- Straße (Pflicht, ÜBER PLZ/Ort) -->
     <fieldset class="grid-1">
       <div class="field row">
         <label for="street">Straße & Nr.*</label>
@@ -105,31 +104,41 @@
 </section>
 
 <style>
-  /* Grundlayout */
-  .form-wrap{max-width:760px;margin:0 auto}
+  /* ===== Reset innerhalb des Formularbereichs (verhindert Theme-Floats etc.) ===== */
+  .form-wrap *{box-sizing:border-box}
+  .form-wrap label{float:none !important; width:auto !important; display:initial !important; margin:0}
+  .form-wrap fieldset{border:1px solid var(--c-border, #d9e1e8); padding:10px 12px; margin:0}
+  .form-wrap legend{margin:0 0 6px 0; padding:0}
+
+  /* Texte zentrieren */
   .sublead,.infos{text-align:center;margin:0 0 8px 0}
+
+  /* Formular-Raster */
   .ots-form{display:grid;gap:14px}
-
-  /* Felder: Label links, Input rechts – immer eine Linie */
-  .row{display:grid !important; grid-template-columns:170px 1fr !important; column-gap:12px; align-items:center !important}
-  .row label{margin:0;white-space:nowrap}
-  .row input,.row textarea{width:100%;box-sizing:border-box}
-
   .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .grid-1{display:block}
 
-  /* Checklisten / Einwilligungen – linksbündig, Checkbox + Text in einer Zeile */
-  .checklist,.consents{display:flex !important; flex-direction:column !important; gap:10px; align-items:flex-start}
-  label.opt{display:inline-flex !important; align-items:center !important; gap:10px; margin:0; width:100%}
-  label.opt input{margin:0; flex:0 0 auto}
-  label.opt span{flex:1 1 auto; line-height:1.35}
+  /* Zeilenlayout: Label links, Feld rechts in EINER Linie */
+  .row{display:grid !important; grid-template-columns:170px 1fr !important; column-gap:12px; align-items:center !important}
+  .row input,.row textarea{width:100%}
 
-  /* Textarea-Reihe */
+  /* Textarea-Ausrichtung */
   .row-textarea{align-items:start}
   .row-textarea label{padding-top:6px}
   .row textarea{min-height:110px;resize:vertical}
 
-  /* Button */
+  /* Checklisten & Einwilligungen: Checkbox links, Text daneben; alles innerhalb der Box */
+  .checklist,.consents{display:block}
+  .checklist .opt,.consents .opt{
+    display:flex !important; align-items:flex-start !important; gap:10px;
+    margin:0; padding:4px 0; width:100%;
+  }
+  .checklist .opt input,.consents .opt input{margin-top:2px; flex:0 0 auto}
+  .checklist .opt span,.consents .opt span{
+    flex:1 1 auto; display:block; white-space:normal; overflow-wrap:anywhere; word-break:break-word;
+  }
+
+  /* Button-Zeile */
   .actions{text-align:center;margin-top:6px}
 
   /* Honeypot unsichtbar */
@@ -158,11 +167,8 @@
       const data = new FormData(f);
       try {
         const res = await fetch(f.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
-        if (res.ok) {
-          window.location.href = "/kontakt/thank-you/";
-        } else {
-          status.textContent = "Fehler beim Senden. Bitte erneut versuchen.";
-        }
+        if (res.ok) window.location.href = "/kontakt/thank-you/";
+        else status.textContent = "Fehler beim Senden. Bitte erneut versuchen.";
       } catch (err) {
         status.textContent = "Netzwerkfehler. Bitte später erneut versuchen.";
       }
